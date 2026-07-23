@@ -1196,7 +1196,7 @@
   animEls.forEach(el => animObserver.observe(el));
 </script>
 <!-- POPUP DE CAPTURA -->
-<div id="popup-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;">
+<div id="popup-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;padding:20px;">
   <div id="popup-box" style="background:#1a1a1a;border:1px solid rgba(0,212,255,0.2);border-radius:12px;max-width:480px;width:100%;padding:40px 36px;position:relative;box-shadow:0 0 60px rgba(0,0,0,0.6);">
     
     <!-- Fechar -->
@@ -1287,7 +1287,6 @@
     to   { opacity:1; transform:scale(1) translateY(0); }
   }
   #popup-box { animation: popupIn 0.3s ease; }
-  #popup-overlay.ativo { display:flex !important; }
   select option { background:#1a1a1a; color:#fff; }
   @media (max-width:600px) {
     #popup-box { padding:28px 20px; }
@@ -1299,12 +1298,21 @@
   const CHECKOUT_URL = '#'; // Substitua pelo link do checkout
 
   function abrirPopup() {
-    document.getElementById('popup-overlay').classList.add('ativo');
+    const overlay = document.getElementById('popup-overlay');
+    // Resetar estado do popup
+    document.getElementById('lead-form').style.display = 'block';
+    document.getElementById('popup-loading').style.display = 'none';
+    document.getElementById('campo-nome').value = '';
+    document.getElementById('campo-email').value = '';
+    document.getElementById('campo-telefone').value = '';
+    ['erro-nome','erro-email','erro-telefone'].forEach(id => document.getElementById(id).style.display = 'none');
+    // Abrir
+    overlay.style.display = 'flex';
     document.body.style.overflow = 'hidden';
   }
 
   function fecharPopup() {
-    document.getElementById('popup-overlay').classList.remove('ativo');
+    document.getElementById('popup-overlay').style.display = 'none';
     document.body.style.overflow = '';
   }
 
@@ -1392,11 +1400,11 @@
       body: JSON.stringify({ nome, email, pais, ddi, telefone })
     })
     .then(() => {
-      // Independente da resposta, redireciona (no-cors não retorna status)
+      fecharPopup();
       window.location.href = CHECKOUT_URL;
     })
     .catch(() => {
-      // Mesmo em erro de rede, redireciona para não perder a venda
+      fecharPopup();
       window.location.href = CHECKOUT_URL;
     });
   }
