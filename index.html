@@ -25,7 +25,10 @@
 <meta name="twitter:description" content="3 dias que redefinem sua vida emocional, profissional e familiar para sempre.">
 <meta name="twitter:image" content="https://ime.marciomicheli.com.br/wp-content/uploads/2024/06/marcio-micheli-sobre.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap"></noscript>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -40,6 +43,16 @@
     --grey-light: #cccccc;
     --font-display: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
+  }
+
+  /* Evitar flash de fonte */
+  @font-face {
+    font-family: 'Montserrat';
+    font-display: optional;
+  }
+  @font-face {
+    font-family: 'Open Sans';
+    font-display: optional;
   }
 
   html { scroll-behavior: smooth; }
@@ -1070,8 +1083,8 @@
         <li>Acesso a todas as ferramentas</li>
         <li>Material de apoio</li>
       </ul>
-      <!-- Substitua # pelo link do checkout quando disponível -->
-      <a href="#" class="btn-ticket">INSCREVER-ME AGORA</a>
+      <!-- Botão abre popup -->
+      <button onclick="abrirPopup()" class="btn-ticket">INSCREVER-ME AGORA</button>
       <p style="font-size:12px;color:var(--grey);text-align:center;">🔒 Compra 100% segura</p>
 
       <!-- Barra de progresso -->
@@ -1182,5 +1195,212 @@
   }, { threshold: 0.12 });
   animEls.forEach(el => animObserver.observe(el));
 </script>
+<!-- POPUP DE CAPTURA -->
+<div id="popup-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;">
+  <div id="popup-box" style="background:#1a1a1a;border:1px solid rgba(0,212,255,0.2);border-radius:12px;max-width:480px;width:100%;padding:40px 36px;position:relative;box-shadow:0 0 60px rgba(0,0,0,0.6);">
+    
+    <!-- Fechar -->
+    <button onclick="fecharPopup()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:#888;font-size:22px;cursor:pointer;line-height:1;">✕</button>
+
+    <!-- Logo -->
+    <img src="https://ime.marciomicheli.com.br/wp-content/uploads/2024/06/ime-logo-branca-colorida.png" alt="IME" style="height:36px;margin-bottom:24px;display:block;">
+
+    <!-- Título -->
+    <h3 style="font-family:'Montserrat',sans-serif;font-size:18px;font-weight:600;color:#fff;margin-bottom:8px;line-height:1.4;">Preencha com seus dados para acessar a página de compra:</h3>
+    <p style="font-size:13px;color:#888;margin-bottom:28px;font-family:'Open Sans',sans-serif;">Seus dados estão seguros e não serão compartilhados.</p>
+
+    <!-- Formulário -->
+    <form id="lead-form" onsubmit="enviarFormulario(event)">
+      
+      <!-- Nome -->
+      <div style="margin-bottom:16px;">
+        <label style="display:block;font-size:12px;font-weight:600;color:#ccc;margin-bottom:6px;font-family:'Montserrat',sans-serif;letter-spacing:0.05em;text-transform:uppercase;">Nome completo *</label>
+        <input type="text" id="campo-nome" placeholder="Seu nome completo" required
+          style="width:100%;background:#111;border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:12px 14px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color 0.2s;"
+          onfocus="this.style.borderColor='#1BB954'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
+        <span id="erro-nome" style="display:none;font-size:11px;color:#ff4444;margin-top:4px;font-family:'Open Sans',sans-serif;"></span>
+      </div>
+
+      <!-- Email -->
+      <div style="margin-bottom:16px;">
+        <label style="display:block;font-size:12px;font-weight:600;color:#ccc;margin-bottom:6px;font-family:'Montserrat',sans-serif;letter-spacing:0.05em;text-transform:uppercase;">E-mail *</label>
+        <input type="email" id="campo-email" placeholder="seu@email.com" required
+          style="width:100%;background:#111;border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:12px 14px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color 0.2s;"
+          onfocus="this.style.borderColor='#1BB954'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
+        <span id="erro-email" style="display:none;font-size:11px;color:#ff4444;margin-top:4px;font-family:'Open Sans',sans-serif;"></span>
+      </div>
+
+      <!-- Telefone -->
+      <div style="margin-bottom:28px;">
+        <label style="display:block;font-size:12px;font-weight:600;color:#ccc;margin-bottom:6px;font-family:'Montserrat',sans-serif;letter-spacing:0.05em;text-transform:uppercase;">Telefone / WhatsApp *</label>
+        <div style="display:flex;gap:8px;align-items:stretch;">
+          <!-- Seletor de país -->
+          <select id="campo-pais" onchange="atualizarDDI()"
+            style="background:#111;border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:12px 10px;color:#fff;font-size:13px;font-family:'Open Sans',sans-serif;outline:none;cursor:pointer;min-width:130px;transition:border-color 0.2s;"
+            onfocus="this.style.borderColor='#1BB954'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
+            <option value="Brasil" data-ddi="+55" selected>🇧🇷 +55</option>
+            <option value="Portugal" data-ddi="+351">🇵🇹 +351</option>
+            <option value="Estados Unidos" data-ddi="+1">🇺🇸 +1</option>
+            <option value="Reino Unido" data-ddi="+44">🇬🇧 +44</option>
+            <option value="Argentina" data-ddi="+54">🇦🇷 +54</option>
+            <option value="Colômbia" data-ddi="+57">🇨🇴 +57</option>
+            <option value="México" data-ddi="+52">🇲🇽 +52</option>
+            <option value="Alemanha" data-ddi="+49">🇩🇪 +49</option>
+            <option value="França" data-ddi="+33">🇫🇷 +33</option>
+            <option value="Itália" data-ddi="+39">🇮🇹 +39</option>
+            <option value="Espanha" data-ddi="+34">🇪🇸 +34</option>
+            <option value="Japão" data-ddi="+81">🇯🇵 +81</option>
+            <option value="Austrália" data-ddi="+61">🇦🇺 +61</option>
+            <option value="Canadá" data-ddi="+1">🇨🇦 +1</option>
+            <option value="Chile" data-ddi="+56">🇨🇱 +56</option>
+            <option value="Outro" data-ddi="">🌍 Outro</option>
+          </select>
+          <!-- Campo telefone -->
+          <input type="tel" id="campo-telefone" placeholder="(00) 00000-0000" required
+            style="flex:1;background:#111;border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:12px 14px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color 0.2s;"
+            onfocus="this.style.borderColor='#1BB954'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
+        </div>
+        <span id="erro-telefone" style="display:none;font-size:11px;color:#ff4444;margin-top:4px;font-family:'Open Sans',sans-serif;"></span>
+      </div>
+
+      <!-- Botão enviar -->
+      <button type="submit" id="btn-enviar"
+        style="width:100%;background:#1BB954;color:#000;font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;letter-spacing:0.04em;padding:16px;border-radius:6px;border:none;cursor:pointer;transition:background 0.2s,color 0.2s;text-transform:uppercase;">
+        INSCREVER-ME AGORA
+      </button>
+      <p style="font-size:11px;color:#666;text-align:center;margin-top:12px;font-family:'Open Sans',sans-serif;">🔒 Seus dados estão protegidos</p>
+    </form>
+
+    <!-- Estado de carregando -->
+    <div id="popup-loading" style="display:none;text-align:center;padding:20px 0;">
+      <div style="width:40px;height:40px;border:3px solid rgba(255,255,255,0.1);border-top-color:#1BB954;border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 16px;"></div>
+      <p style="color:#ccc;font-family:'Open Sans',sans-serif;font-size:14px;">Salvando seus dados...</p>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes popupIn {
+    from { opacity:0; transform:scale(0.92) translateY(16px); }
+    to   { opacity:1; transform:scale(1) translateY(0); }
+  }
+  #popup-box { animation: popupIn 0.3s ease; }
+  #popup-overlay.ativo { display:flex !important; }
+  select option { background:#1a1a1a; color:#fff; }
+  @media (max-width:600px) {
+    #popup-box { padding:28px 20px; }
+  }
+</style>
+
+<script>
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwgCEx5M8yyoR_E7zutCmM_3relZ0cXLDPczmXzZ3Kih2azQuhKEbCLDneSySp0YCAw/exec';
+  const CHECKOUT_URL = '#'; // Substitua pelo link do checkout
+
+  function abrirPopup() {
+    document.getElementById('popup-overlay').classList.add('ativo');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function fecharPopup() {
+    document.getElementById('popup-overlay').classList.remove('ativo');
+    document.body.style.overflow = '';
+  }
+
+  // Fechar ao clicar fora
+  document.getElementById('popup-overlay').addEventListener('click', function(e) {
+    if (e.target === this) fecharPopup();
+  });
+
+  // Fechar com ESC
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') fecharPopup();
+  });
+
+  function atualizarDDI() {
+    const select = document.getElementById('campo-pais');
+    const opt = select.options[select.selectedIndex];
+    const ddi = opt.getAttribute('data-ddi');
+    const tel = document.getElementById('campo-telefone');
+    tel.placeholder = ddi ? `${ddi} (00) 00000-0000` : 'Número com DDI';
+  }
+
+  function validarEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function validarTelefone(tel) {
+    const nums = tel.replace(/\D/g, '');
+    return nums.length >= 7;
+  }
+
+  function mostrarErro(id, msg) {
+    const el = document.getElementById(id);
+    el.textContent = msg;
+    el.style.display = 'block';
+  }
+
+  function limparErro(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+
+  function enviarFormulario(e) {
+    e.preventDefault();
+    
+    const nome     = document.getElementById('campo-nome').value.trim();
+    const email    = document.getElementById('campo-email').value.trim();
+    const telefone = document.getElementById('campo-telefone').value.trim();
+    const select   = document.getElementById('campo-pais');
+    const pais     = select.options[select.selectedIndex].value;
+    const ddi      = select.options[select.selectedIndex].getAttribute('data-ddi');
+
+    let valido = true;
+
+    // Validar nome
+    limparErro('erro-nome');
+    if (nome.length < 3) {
+      mostrarErro('erro-nome', 'Por favor, informe seu nome completo.');
+      valido = false;
+    }
+
+    // Validar email
+    limparErro('erro-email');
+    if (!validarEmail(email)) {
+      mostrarErro('erro-email', 'Por favor, informe um e-mail válido.');
+      valido = false;
+    }
+
+    // Validar telefone
+    limparErro('erro-telefone');
+    if (!validarTelefone(telefone)) {
+      mostrarErro('erro-telefone', 'Por favor, informe um telefone válido.');
+      valido = false;
+    }
+
+    if (!valido) return;
+
+    // Mostrar loading
+    document.getElementById('lead-form').style.display = 'none';
+    document.getElementById('popup-loading').style.display = 'block';
+
+    // Enviar para Apps Script
+    fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nome, email, pais, ddi, telefone })
+    })
+    .then(() => {
+      // Independente da resposta, redireciona (no-cors não retorna status)
+      window.location.href = CHECKOUT_URL;
+    })
+    .catch(() => {
+      // Mesmo em erro de rede, redireciona para não perder a venda
+      window.location.href = CHECKOUT_URL;
+    });
+  }
+</script>
+
 </body>
 </html>
