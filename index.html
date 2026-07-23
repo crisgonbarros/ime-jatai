@@ -4,6 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Imersão Método EVO – Jataí-GO</title>
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAIAEBAAAAAAIACVAQAAJgAAACAgAAAAACAAmQMAALsBAACJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAFcSURBVHicpZPBahNRGIW/O06SaUoL0iAIpX0Dd+YJSvsAfQZfw12foBtBKPgAJm7SZVdduhuyiI0prVoxQYyONpPkzn9cNFJmxgiSs7uX/xzO+e+5TpJYAcEq5KUCAqzoa4lRV4wgwK3iwAGjVJx9zJhmWkiC0glYtlxAgCHG3jju/+L8JuN1LDIvLBNJp8XswxWYB1lZwAEBjt5kyryS8rxZ5XHFMbaA4IFj3DllNngPQQju3nj4J3PClHf6Rlz9Sa1epd2bsPkl4iL2DLtvUX9E9OaIMI2pNQ9xW7sgERbzVyqeaMMTzGE9HVP9bogpLkhAHszyL6ICevqqV/OuJMnfXGrYfilJGuzvKOmcFMdVWmKDiCfhQywT7tE2XMd8fnZA1Kiz9nQPsvwSSw5Mppm8ZIvz7Q8lrRfyn/qLC8vNl4r0T0jg8jULl4zmSbI7ois3//8c/AUr/8bf19YE2tbj0V4AAAAASUVORK5CYIKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIBgAAAHN6evQAAANgSURBVHic7Zc9bBxVEMd/83bv9uK7w4Y4UkxkY6HwoYCUgIwUIYUiQBEJCUFBk4aCAiklLTQpIqCmoUBIUEAHQqkjUBSsBCxjGROBsY2NPxKTM+fYd7d3uztDsecYJz7fERem8EjbvH2785t5/5nZFTMz9tDcXjrfB9gH+F8A+P9ls/6rYAUQabHRbIebW0120wesCbIb6ygDG4Tf3Yj5uWR0O+HMoEfvAdkWon59nODJpzvKQlsNbDj4fLbGJ1Mh15ZjLk4lXLiccLu+FRDA6iHlzz5Ga9UOQmsDoJY6n1hv8H05pCcw3nwiwwensjRqwsUJQ0iPHFUAosV5qlevEC/MNV+i9w+ApNGNVmu4TMTDeTjd5zPYLbw95BibhETBCZgapkY4Pkb0V4lw/CdQxew+AAxDMVzKwIrUCIKIYpCkUAbH+oSHElhYBksATxAnrP84jmVy1MaGwTnEeaAxaNI5gCA4UoHN6DqVbIXufMytuM5kOUINnIPjh4VKFcQDU+H2yCzlqzO4Bw/SmLhMY2I4FaLzwXnbJ/nuMmyQMM0KM1ZmkZC/EyWJMmiYpV7O0bh5gHypiwHN4uaMYkUpzIaEP0zStf4tPT2j5LunyGUXyQSr5Pr7CB4fInP8DN6JV5BccfN8aVGGcicLhnMKfoLLxGgQoYGPc4qYUUgquFIEGuFcCSeriFQRqSHSQKwBcR2L66BRKqi76rZtI/qTdb5OZqhHgl/L8VrQT3+QxXnC8pVpbl1f5thbJ7E4ZvXaryy89w45b5qgWOXQu58SnHgRpLXWdxShAf0UGHBdhH6NRwsZHukKEGeoQu6gUhv+Ek1APEfP809ReKwHW1vCOzRA8MzLqfNkQ4T3xtpGhCnEgBTARQz6XXey6BwUjw6QW71EZeQSiMMMXDiP0wqZ/qNgmjr3NkR4b2fcsQ9I8zpCgQfE44jkm0PIYUmM+Fl6XzjF8vmz1H8bYe2rj9D5UXzfyJ9+o5n6Nu3YOrC6xfaN/WKRJZuLmpipWryyZHOv99r0s9gfJ7HZIaz0/lkzVbMkaf3SpnU8DW+wxmGKWxdNQRzx0u+sffEhWrpJ7rmXyL96bjPyNgNpV+M4heh89m9nHX+QtJz9ImkmNiaXGXjbC27bx/d/TPYB9gH2GuAfupDbVCV3uH0AAAAASUVORK5CYII=">
+<link rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAIAEBAAAAAAIACVAQAAJgAAACAgAAAAACAAmQMAALsBAACJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAFcSURBVHicpZPBahNRGIW/O06SaUoL0iAIpX0Dd+YJSvsAfQZfw12foBtBKPgAJm7SZVdduhuyiI0prVoxQYyONpPkzn9cNFJmxgiSs7uX/xzO+e+5TpJYAcEq5KUCAqzoa4lRV4wgwK3iwAGjVJx9zJhmWkiC0glYtlxAgCHG3jju/+L8JuN1LDIvLBNJp8XswxWYB1lZwAEBjt5kyryS8rxZ5XHFMbaA4IFj3DllNngPQQju3nj4J3PClHf6Rlz9Sa1epd2bsPkl4iL2DLtvUX9E9OaIMI2pNQ9xW7sgERbzVyqeaMMTzGE9HVP9bogpLkhAHszyL6ICevqqV/OuJMnfXGrYfilJGuzvKOmcFMdVWmKDiCfhQywT7tE2XMd8fnZA1Kiz9nQPsvwSSw5Mppm8ZIvz7Q8lrRfyn/qLC8vNl4r0T0jg8jULl4zmSbI7ois3//8c/AUr/8bf19YE2tbj0V4AAAAASUVORK5CYIKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIBgAAAHN6evQAAANgSURBVHic7Zc9bBxVEMd/83bv9uK7w4Y4UkxkY6HwoYCUgIwUIYUiQBEJCUFBk4aCAiklLTQpIqCmoUBIUEAHQqkjUBSsBCxjGROBsY2NPxKTM+fYd7d3uztDsecYJz7fERem8EjbvH2785t5/5nZFTMz9tDcXjrfB9gH+F8A+P9ls/6rYAUQabHRbIebW0120wesCbIb6ygDG4Tf3Yj5uWR0O+HMoEfvAdkWon59nODJpzvKQlsNbDj4fLbGJ1Mh15ZjLk4lXLiccLu+FRDA6iHlzz5Ga9UOQmsDoJY6n1hv8H05pCcw3nwiwwensjRqwsUJQ0iPHFUAosV5qlevEC/MNV+i9w+ApNGNVmu4TMTDeTjd5zPYLbw95BibhETBCZgapkY4Pkb0V4lw/CdQxew+AAxDMVzKwIrUCIKIYpCkUAbH+oSHElhYBksATxAnrP84jmVy1MaGwTnEeaAxaNI5gCA4UoHN6DqVbIXufMytuM5kOUINnIPjh4VKFcQDU+H2yCzlqzO4Bw/SmLhMY2I4FaLzwXnbJ/nuMmyQMM0KM1ZmkZC/EyWJMmiYpV7O0bh5gHypiwHN4uaMYkUpzIaEP0zStf4tPT2j5LunyGUXyQSr5Pr7CB4fInP8DN6JV5BccfN8aVGGcicLhnMKfoLLxGgQoYGPc4qYUUgquFIEGuFcCSeriFQRqSHSQKwBcR2L66BRKqi76rZtI/qTdb5OZqhHgl/L8VrQT3+QxXnC8pVpbl1f5thbJ7E4ZvXaryy89w45b5qgWOXQu58SnHgRpLXWdxShAf0UGHBdhH6NRwsZHukKEGeoQu6gUhv+Ek1APEfP809ReKwHW1vCOzRA8MzLqfNkQ4T3xtpGhCnEgBTARQz6XXey6BwUjw6QW71EZeQSiMMMXDiP0wqZ/qNgmjr3NkR4b2fcsQ9I8zpCgQfE44jkm0PIYUmM+Fl6XzjF8vmz1H8bYe2rj9D5UXzfyJ9+o5n6Nu3YOrC6xfaN/WKRJZuLmpipWryyZHOv99r0s9gfJ7HZIaz0/lkzVbMkaf3SpnU8DW+wxmGKWxdNQRzx0u+sffEhWrpJ7rmXyL96bjPyNgNpV+M4heh89m9nHX+QtJz9ImkmNiaXGXjbC27bx/d/TPYB9gH2GuAfupDbVCV3uH0AAAAASUVORK5CYII=">
+
+<!-- Open Graph / WhatsApp / Redes Sociais -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jatai.metodoevoimpacto.com.br">
+<meta property="og:title" content="Imersão Método EVO – Jataí-GO | 04 a 06 de Setembro de 2026">
+<meta property="og:description" content="3 dias que redefinem sua vida emocional, profissional e familiar para sempre. Garanta sua vaga na Imersão Método EVO em Jataí-GO.">
+<meta property="og:image" content="https://ime.marciomicheli.com.br/wp-content/uploads/2024/06/marcio-micheli-sobre.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Imersão Método EVO – Jataí-GO">
+<meta name="twitter:description" content="3 dias que redefinem sua vida emocional, profissional e familiar para sempre.">
+<meta name="twitter:image" content="https://ime.marciomicheli.com.br/wp-content/uploads/2024/06/marcio-micheli-sobre.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -757,51 +777,14 @@
     --green-dark: #159040;
   }
 
-
   /* ── BARRA DE PROGRESSO ── */
-  .progress-wrap {
-    margin: 20px 0 6px;
-  }
-  .progress-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-  }
-  .progress-label {
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--grey-light);
-    font-family: var(--font-display);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-  .progress-pct {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--cyan);
-    font-family: var(--font-display);
-  }
-  .progress-bar-bg {
-    background: rgba(255,255,255,0.08);
-    border-radius: 99px;
-    height: 8px;
-    overflow: hidden;
-  }
-  .progress-bar-fill {
-    height: 100%;
-    border-radius: 99px;
-    background: linear-gradient(90deg, #FF6B00, #8B2FC9, #00D4FF);
-    transition: width 1.2s ease;
-    width: 0%;
-  }
-  .progress-note {
-    font-size: 11px;
-    color: var(--grey);
-    text-align: center;
-    margin-top: 8px;
-    font-weight: 300;
-  }
+  .progress-wrap { margin: 20px 0 6px; }
+  .progress-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .progress-label { font-size: 12px; font-weight: 500; color: var(--grey-light); font-family: var(--font-display); letter-spacing: 0.05em; text-transform: uppercase; }
+  .progress-pct { font-size: 13px; font-weight: 600; color: var(--cyan); font-family: var(--font-display); }
+  .progress-bar-bg { background: rgba(255,255,255,0.08); border-radius: 99px; height: 8px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, #FF6B00, #8B2FC9, #00D4FF); transition: width 1.2s ease; width: 0%; }
+  .progress-note { font-size: 11px; color: var(--grey); text-align: center; margin-top: 8px; font-weight: 300; }
 
   /* ── ANIMAÇÕES DE ENTRADA ── */
   .fade-up {
@@ -1077,10 +1060,11 @@
     </div>
     <div class="ticket-body">
       <p class="ticket-desc">Este acesso garante sua participação no evento.</p>
+      <p class="ticket-price-old">de R$ 2.497 por apenas</p>
       <div class="ticket-price">
         <span>R$</span>397
       </div>
-      <p class="ticket-installments">ou em até 12x no cartão</p>
+      <p class="ticket-installments">ou 12x de R$ 40,96 no cartão</p>
       <ul class="ticket-features">
         <li>Participação nos 3 dias do Imersão Método EVO</li>
         <li>Acesso a todas as ferramentas</li>
@@ -1089,12 +1073,24 @@
       <!-- Substitua # pelo link do checkout quando disponível -->
       <a href="#" class="btn-ticket">INSCREVER-ME AGORA</a>
       <p style="font-size:12px;color:var(--grey);text-align:center;">🔒 Compra 100% segura</p>
+
+      <!-- Barra de progresso -->
+      <div class="progress-wrap">
+        <div class="progress-header">
+          <span class="progress-label">Vagas preenchidas</span>
+          <span class="progress-pct" id="prog-pct">0%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="prog-bar"></div>
+        </div>
+        <p class="progress-note">⚡ Garanta sua inscrição antes que encerre</p>
+      </div>
     </div>
     <div class="ticket-footer">
       <span class="label">Total</span>
       <span class="total">R$ 397</span>
     </div>
-    <p class="ticket-vagas">⚡ Vagas limitadas</p>
+    
   </div>
 
   <p class="ticket-notice">* Treinamento para maiores de 16 anos.</p>
@@ -1136,19 +1132,7 @@
 </footer>
 
 <script>
-  // ── SCROLL ANIMATIONS ──
-  const animEls = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .fade-in');
-  const animObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        animObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  animEls.forEach(el => animObserver.observe(el));
-
-  // ── BARRA DE PROGRESSO DE VAGAS ──
+  // ── BARRA DE PROGRESSO ──
   function calcProgress() {
     const eventDate  = new Date('2026-09-04T10:00:00');
     const startDate  = new Date('2026-07-23T00:00:00');
@@ -1156,10 +1140,8 @@
     const daysLeft   = (eventDate - today) / (1000 * 60 * 60 * 24);
     const totalDays  = (eventDate - startDate) / (1000 * 60 * 60 * 24);
     const daysPassed = (today - startDate) / (1000 * 60 * 60 * 24);
-
     if (daysLeft <= 1)  return 99;
     if (daysLeft <= 10) return 95;
-
     const activeDays = totalDays - 10;
     const progress   = Math.max(0, Math.min(daysPassed / activeDays, 1));
     return Math.round(1 + progress * 94);
@@ -1169,14 +1151,13 @@
     const bar   = document.getElementById('prog-bar');
     const label = document.getElementById('prog-pct');
     if (!bar || !label) return;
-
-    let current  = 0;
-    const steps  = 60;
-    const inc    = targetPct / steps;
-    const timer  = setInterval(() => {
+    let current = 0;
+    const steps = 60;
+    const inc   = targetPct / steps;
+    const timer = setInterval(() => {
       current = Math.min(current + inc, targetPct);
-      bar.style.width      = current + '%';
-      label.textContent    = Math.round(current) + '%';
+      bar.style.width   = current + '%';
+      label.textContent = Math.round(current) + '%';
       if (current >= targetPct) clearInterval(timer);
     }, 1200 / steps);
   }
@@ -1193,6 +1174,17 @@
     }, { threshold: 0.3 });
     progObserver.observe(ticketCard);
   }
+
+  const animEls = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .fade-in');
+  const animObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        animObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  animEls.forEach(el => animObserver.observe(el));
 </script>
 </body>
 </html>
