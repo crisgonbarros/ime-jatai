@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Imersão Método EVO – Jataí-GO</title>
+<!-- IME Jataí-GO | Versão 2.6 | Fase: Lançamento/Captura -->
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAIAEBAAAAAAIACVAQAAJgAAACAgAAAAACAAmQMAALsBAACJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAFcSURBVHicpZPBahNRGIW/O06SaUoL0iAIpX0Dd+YJSvsAfQZfw12foBtBKPgAJm7SZVdduhuyiI0prVoxQYyONpPkzn9cNFJmxgiSs7uX/xzO+e+5TpJYAcEq5KUCAqzoa4lRV4wgwK3iwAGjVJx9zJhmWkiC0glYtlxAgCHG3jju/+L8JuN1LDIvLBNJp8XswxWYB1lZwAEBjt5kyryS8rxZ5XHFMbaA4IFj3DllNngPQQju3nj4J3PClHf6Rlz9Sa1epd2bsPkl4iL2DLtvUX9E9OaIMI2pNQ9xW7sgERbzVyqeaMMTzGE9HVP9bogpLkhAHszyL6ICevqqV/OuJMnfXGrYfilJGuzvKOmcFMdVWmKDiCfhQywT7tE2XMd8fnZA1Kiz9nQPsvwSSw5Mppm8ZIvz7Q8lrRfyn/qLC8vNl4r0T0jg8jULl4zmSbI7ois3//8c/AUr/8bf19YE2tbj0V4AAAAASUVORK5CYIKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIBgAAAHN6evQAAANgSURBVHic7Zc9bBxVEMd/83bv9uK7w4Y4UkxkY6HwoYCUgIwUIYUiQBEJCUFBk4aCAiklLTQpIqCmoUBIUEAHQqkjUBSsBCxjGROBsY2NPxKTM+fYd7d3uztDsecYJz7fERem8EjbvH2785t5/5nZFTMz9tDcXjrfB9gH+F8A+P9ls/6rYAUQabHRbIebW0120wesCbIb6ygDG4Tf3Yj5uWR0O+HMoEfvAdkWon59nODJpzvKQlsNbDj4fLbGJ1Mh15ZjLk4lXLiccLu+FRDA6iHlzz5Ga9UOQmsDoJY6n1hv8H05pCcw3nwiwwensjRqwsUJQ0iPHFUAosV5qlevEC/MNV+i9w+ApNGNVmu4TMTDeTjd5zPYLbw95BibhETBCZgapkY4Pkb0V4lw/CdQxew+AAxDMVzKwIrUCIKIYpCkUAbH+oSHElhYBksATxAnrP84jmVy1MaGwTnEeaAxaNI5gCA4UoHN6DqVbIXufMytuM5kOUINnIPjh4VKFcQDU+H2yCzlqzO4Bw/SmLhMY2I4FaLzwXnbJ/nuMmyQMM0KM1ZmkZC/EyWJMmiYpV7O0bh5gHypiwHN4uaMYkUpzIaEP0zStf4tPT2j5LunyGUXyQSr5Pr7CB4fInP8DN6JV5BccfN8aVGGcicLhnMKfoLLxGgQoYGPc4qYUUgquFIEGuFcCSeriFQRqSHSQKwBcR2L66BRKqi76rZtI/qTdb5OZqhHgl/L8VrQT3+QxXnC8pVpbl1f5thbJ7E4ZvXaryy89w45b5qgWOXQu58SnHgRpLXWdxShAf0UGHBdhH6NRwsZHukKEGeoQu6gUhv+Ek1APEfP809ReKwHW1vCOzRA8MzLqfNkQ4T3xtpGhCnEgBTARQz6XXey6BwUjw6QW71EZeQSiMMMXDiP0wqZ/qNgmjr3NkR4b2fcsQ9I8zpCgQfE44jkm0PIYUmM+Fl6XzjF8vmz1H8bYe2rj9D5UXzfyJ9+o5n6Nu3YOrC6xfaN/WKRJZuLmpipWryyZHOv99r0s9gfJ7HZIaz0/lkzVbMkaf3SpnU8DW+wxmGKWxdNQRzx0u+sffEhWrpJ7rmXyL96bjPyNgNpV+M4heh89m9nHX+QtJz9ImkmNiaXGXjbC27bx/d/TPYB9gH2GuAfupDbVCV3uH0AAAAASUVORK5CYII=">
@@ -291,9 +292,9 @@
     border-radius: 8px;
     padding: 32px 28px;
     text-align: left;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, transform 0.3s ease;
   }
-  .benefit-card:hover { border-color: rgba(0,212,255,0.3); }
+  .benefit-card:hover { border-color: rgba(0,212,255,0.3); transform: translateY(-4px); }
   .benefit-icon {
     width: 44px;
     height: 44px;
@@ -862,14 +863,15 @@
   .vip-benefit {
     display: flex;
     align-items: flex-start;
-    gap: 14px;
+    gap: 10px;
     max-width: 480px;
     margin: 16px auto 0;
-    padding: 16px 20px;
+    padding: 12px 16px;
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 8px;
     transition: border-color 0.2s, background 0.2s;
+    text-align: left;
   }
   .vip-benefit:hover { border-color: rgba(255,107,0,0.3); background: rgba(255,255,255,0.06); }
   .vip-benefit p {
@@ -879,6 +881,30 @@
     line-height: 1.6;
     font-family: var(--font-body);
     margin: 0;
+  }
+
+
+  /* ── WRAPPER BOTÃO + BLOCO VIP ── */
+  .btn-vip-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 420px;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .btn-vip-wrapper .btn-primary {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  .btn-vip-wrapper .vip-benefit {
+    width: 100%;
+    margin: 10px 0 0 0;
+    max-width: 100%;
+    text-align: left;
   }
 
   /* ── SCROLL REVEAL ── */
@@ -929,19 +955,21 @@
         <div>Centro Cultural Dom Benedito Domingos Cóscia<br>Av. W-001, 1087-1053 - St. Epaminondas I, Jataí - GO, 75805-160</div>
       </div>
     </div>
-    <a href="#" onclick="event.preventDefault();abrirPopup()" class="btn-primary">
+    <div class="btn-vip-wrapper">
+<a href="#" onclick="event.preventDefault();abrirPopup()" class="btn-primary">
         Entrar no grupo VIP
     </a>
-    <div class="vip-benefit fade-up">
-  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:32px;height:32px;flex-shrink:0;margin-top:2px">
-  <defs><linearGradient id="gg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs>
-  <rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg)" stroke-width="1.8"/>
-  <path d="M5 20h34v5H5z" stroke="url(#gg)" stroke-width="1.8" stroke-linejoin="round"/>
-  <path d="M22 20V38" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round"/>
-  <path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<div class="vip-benefit fade-up">
+  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;flex-shrink:0;margin-top:2px">
+  <defs><linearGradient id="gg1" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs>
+  <rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg1)" stroke-width="1.8"/>
+  <path d="M5 20h34v5H5z" stroke="url(#gg1)" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M22 20V38" stroke="url(#gg1)" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg1)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg1)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
   <p>Ao entrar no grupo VIP você garante acesso a uma oferta exclusiva, disponível apenas para membros do grupo.</p>
+</div>
 </div>
   </div>
 </section>
@@ -953,19 +981,21 @@
   <div class="video-wrap">
     <iframe src="https://www.youtube.com/embed/awAhT4j2ECo?autoplay=1&mute=1" title="Imersão Método EVO" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
   </div>
-  <a href="#" onclick="event.preventDefault();abrirPopup()" class="btn-primary">
+  <div class="btn-vip-wrapper">
+<a href="#" onclick="event.preventDefault();abrirPopup()" class="btn-primary">
         Entrar no grupo VIP
   </a>
-  <div class="vip-benefit fade-up">
-  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:32px;height:32px;flex-shrink:0;margin-top:2px">
-  <defs><linearGradient id="gg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs>
-  <rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg)" stroke-width="1.8"/>
-  <path d="M5 20h34v5H5z" stroke="url(#gg)" stroke-width="1.8" stroke-linejoin="round"/>
-  <path d="M22 20V38" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round"/>
-  <path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<div class="vip-benefit fade-up">
+  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;flex-shrink:0;margin-top:2px">
+  <defs><linearGradient id="gg2" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs>
+  <rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg2)" stroke-width="1.8"/>
+  <path d="M5 20h34v5H5z" stroke="url(#gg2)" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M22 20V38" stroke="url(#gg2)" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg2)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg2)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
   <p>Ao entrar no grupo VIP você garante acesso a uma oferta exclusiva, disponível apenas para membros do grupo.</p>
+</div>
 </div>
 </section>
 
@@ -1057,19 +1087,21 @@
     </div>
   </div>
   <div style="text-align:center;margin-top:52px;">
-    <a href="#" onclick="event.preventDefault();abrirPopup()" class="btn-primary">
+    <div class="btn-vip-wrapper">
+<a href="#" onclick="event.preventDefault();abrirPopup()" class="btn-primary">
         Entrar no grupo VIP
     </a>
-    <div class="vip-benefit fade-up">
-  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:32px;height:32px;flex-shrink:0;margin-top:2px">
-  <defs><linearGradient id="gg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs>
-  <rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg)" stroke-width="1.8"/>
-  <path d="M5 20h34v5H5z" stroke="url(#gg)" stroke-width="1.8" stroke-linejoin="round"/>
-  <path d="M22 20V38" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round"/>
-  <path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<div class="vip-benefit fade-up">
+  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;flex-shrink:0;margin-top:2px">
+  <defs><linearGradient id="gg3" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs>
+  <rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg3)" stroke-width="1.8"/>
+  <path d="M5 20h34v5H5z" stroke="url(#gg3)" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M22 20V38" stroke="url(#gg3)" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg3)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg3)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
   <p>Ao entrar no grupo VIP você garante acesso a uma oferta exclusiva, disponível apenas para membros do grupo.</p>
+</div>
 </div>
   </div>
 </section>
@@ -1079,19 +1111,21 @@
   <blockquote class="fade-in">
     "Acredite, você pode alcançar sua <span class="evo-gradient">melhor versão</span> com os recursos que tem disponível hoje."
   </blockquote>
-  <a href="#" onclick="event.preventDefault();abrirPopup()" class="btn-primary">
+  <div class="btn-vip-wrapper">
+<a href="#" onclick="event.preventDefault();abrirPopup()" class="btn-primary">
         Entrar no grupo VIP
   </a>
-  <div class="vip-benefit fade-up">
-  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:32px;height:32px;flex-shrink:0;margin-top:2px">
-  <defs><linearGradient id="gg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs>
-  <rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg)" stroke-width="1.8"/>
-  <path d="M5 20h34v5H5z" stroke="url(#gg)" stroke-width="1.8" stroke-linejoin="round"/>
-  <path d="M22 20V38" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round"/>
-  <path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<div class="vip-benefit fade-up">
+  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;flex-shrink:0;margin-top:2px">
+  <defs><linearGradient id="gg4" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs>
+  <rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg4)" stroke-width="1.8"/>
+  <path d="M5 20h34v5H5z" stroke="url(#gg4)" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M22 20V38" stroke="url(#gg4)" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg4)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg4)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
   <p>Ao entrar no grupo VIP você garante acesso a uma oferta exclusiva, disponível apenas para membros do grupo.</p>
+</div>
 </div>
 </section>
 
@@ -1160,9 +1194,22 @@
       <p>Minha família é o <strong>meu bem mais precioso</strong> e juntos temos criado memórias extraordinárias. Sou ex-servidor público e, embora tenha exercido essa função com dedicação, descobri verdadeiramente o meu propósito de vida por meio do Coaching e quero compartilhar com você todas as <strong>infinitas possibilidades</strong> de realizações que temos nessa vida de sermos felizes com aquilo que somos.</p>
       <p>Venha comigo! Eu quero apresentar para você como <strong>alcançar seus objetivos</strong> mais ousados.</p>
       <br>
+      <div class="btn-vip-wrapper">
       <a href="#" onclick="event.preventDefault();abrirPopup()" class="btn-primary">
         Entrar no grupo VIP
       </a>
+      <div class="vip-benefit fade-up">
+  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;flex-shrink:0;margin-top:2px">
+  <defs><linearGradient id="gg6" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs>
+  <rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg6)" stroke-width="1.8"/>
+  <path d="M5 20h34v5H5z" stroke="url(#gg6)" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M22 20V38" stroke="url(#gg6)" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+  <p>Ao entrar no grupo VIP você garante acesso a uma oferta exclusiva, disponível apenas para membros do grupo.</p>
+</div>
+</div>
     </div>
   </div>
 </section>
@@ -1304,12 +1351,12 @@
       <!-- Benefício VIP -->
       <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:14px 16px;margin-bottom:20px;">
         <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:26px;height:26px;flex-shrink:0;margin-top:2px">
-  <defs><linearGradient id="gg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs>
-  <rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg)" stroke-width="1.8"/>
-  <path d="M5 20h34v5H5z" stroke="url(#gg)" stroke-width="1.8" stroke-linejoin="round"/>
-  <path d="M22 20V38" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round"/>
-  <path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs><linearGradient id="gg5" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs>
+  <rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg5)" stroke-width="1.8"/>
+  <path d="M5 20h34v5H5z" stroke="url(#gg5)" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M22 20V38" stroke="url(#gg5)" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg5)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg5)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
         <p style="font-size:12px;color:#ccc;line-height:1.6;font-family:'Open Sans',sans-serif;margin:0;">Ao entrar no grupo VIP você garante acesso a uma oferta exclusiva, disponível apenas para membros do grupo.</p>
       </div>
