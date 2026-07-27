@@ -99,9 +99,9 @@
     padding: 10px 22px;
     border-radius: 4px;
     text-decoration: none;
-    transition: background 0.2s;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
   }
-  .nav-cta:hover { background: var(--cyan-dark); }
+  .nav-cta:hover { background: var(--cyan-dark); color: var(--black); transform: translateY(-2px); }
 
   /* ── HERO ── */
   .hero {
@@ -218,6 +218,10 @@
     border-radius: 4px;
     text-decoration: none;
     transition: background 0.2s, color 0.2s, transform 0.15s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover {
     background: var(--green-dark);
     color: var(--white);
     transform: translateY(-2px);
@@ -386,6 +390,13 @@
     inset: 0;
     background: url('https://ime.marciomicheli.com.br/wp-content/uploads/2024/07/f1-l1.webp') center/cover no-repeat;
     opacity: 0.08;
+    z-index: 0;
+  }
+  .section-quote blockquote,
+  .section-quote .btn-primary,
+  .section-quote .vip-benefit {
+    position: relative;
+    z-index: 1;
   }
   .section-quote blockquote {
     position: relative;
@@ -413,7 +424,9 @@
   }
   .speaker-photo-wrap {
     position: relative;
+    transition: transform 0.3s ease;
   }
+  .speaker-photo-wrap:hover { transform: translateY(-4px); }
   .speaker-photo-wrap img {
     width: 100%;
     border-radius: 8px;
@@ -486,7 +499,9 @@
     border-radius: 8px;
     overflow: hidden;
     text-align: left;
+    transition: border-color 0.2s, transform 0.2s;
   }
+  .schedule-day:hover { border-color: rgba(0,212,255,0.25); transform: translateY(-3px); }
   .schedule-day-header {
     padding: 18px 24px;
     border-bottom: 1px solid rgba(0,212,255,0.2);
@@ -842,6 +857,30 @@
   .delay-5 { transition-delay: 0.5s; }
   .delay-6 { transition-delay: 0.6s; }
 
+
+  /* ── BENEFÍCIO VIP ── */
+  .vip-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    max-width: 480px;
+    margin: 16px auto 0;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .vip-benefit:hover { border-color: rgba(255,107,0,0.3); background: rgba(255,255,255,0.06); }
+  .vip-benefit p {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--grey-light);
+    line-height: 1.6;
+    font-family: var(--font-body);
+    margin: 0;
+  }
+
   /* ── SCROLL REVEAL ── */
   .reveal {
     opacity: 0;
@@ -862,7 +901,7 @@
     <img src="https://ime.marciomicheli.com.br/wp-content/uploads/2024/06/ime-logo-branca-colorida.png" alt="IME Logo">
   </div>
   <a href="https://api.whatsapp.com/send/?phone=5561998370217&text=Quero+saber+mais+informa%C3%A7%C3%B5es+da+Imers%C3%A3o+em+Jata%C3%AD-GO&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="nav-cta">
-    &#128172; Quero saber mais
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px;vertical-align:middle;margin-right:6px"><defs><linearGradient id="gwp" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs><path fill="url(#gwp)" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Quero saber mais
   </a>
 </nav>
 
@@ -878,21 +917,32 @@
     <p class="hero-sub">O Imersão Método EVO é onde tudo acontece. É o seu <strong>recomeço.</strong></p>
     <div class="hero-meta">
       <div class="hero-meta-item">
-        <span class="icon">📍</span>
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px"><defs><linearGradient id="gi1" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" stroke="url(#gi1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <div><strong>Imersão presencial</strong> — Jataí-GO</div>
       </div>
       <div class="hero-meta-item">
-        <span class="icon">📅</span>
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px"><defs><linearGradient id="gi2" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs><rect x="3" y="4" width="18" height="18" rx="2" stroke="url(#gi2)" stroke-width="1.5"/><path d="M16 2v4M8 2v4M3 10h18" stroke="url(#gi2)" stroke-width="1.5" stroke-linecap="round"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01" stroke="url(#gi2)" stroke-width="2" stroke-linecap="round"/></svg></span>
         <div><strong>Dias 04, 05 e 06 de setembro de 2026</strong></div>
       </div>
       <div class="hero-meta-item">
-        <span class="icon">🏛️</span>
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px"><defs><linearGradient id="gi3" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs><path d="M3 21h18M5 21V7l7-4 7 4v14" stroke="url(#gi3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21v-4h6v4M9 11h1m4 0h1M9 15h1m4 0h1" stroke="url(#gi3)" stroke-width="1.5" stroke-linecap="round"/></svg></span>
         <div>Centro Cultural Dom Benedito Domingos Cóscia<br>Av. W-001, 1087-1053 - St. Epaminondas I, Jataí - GO, 75805-160</div>
       </div>
     </div>
-    <a href="#ingresso" class="btn-primary">
-        Inscrever-me agora
+    <a href="#" onclick="event.preventDefault();abrirPopup()" class="btn-primary">
+        Entrar no grupo VIP
     </a>
+    <div class="vip-benefit fade-up">
+  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:32px;height:32px;flex-shrink:0;margin-top:2px">
+  <defs><linearGradient id="gg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs>
+  <rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg)" stroke-width="1.8"/>
+  <path d="M5 20h34v5H5z" stroke="url(#gg)" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M22 20V38" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+  <p>Ao entrar no grupo VIP você garante acesso a uma oferta exclusiva, disponível apenas para membros do grupo.</p>
+</div>
   </div>
 </section>
 
@@ -903,9 +953,20 @@
   <div class="video-wrap">
     <iframe src="https://www.youtube.com/embed/awAhT4j2ECo?autoplay=1&mute=1" title="Imersão Método EVO" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
   </div>
-  <a href="#ingresso" class="btn-primary">
-        Inscrever-me agora
+  <a href="#" onclick="event.preventDefault();abrirPopup()" class="btn-primary">
+        Entrar no grupo VIP
   </a>
+  <div class="vip-benefit fade-up">
+  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:32px;height:32px;flex-shrink:0;margin-top:2px">
+  <defs><linearGradient id="gg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs>
+  <rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg)" stroke-width="1.8"/>
+  <path d="M5 20h34v5H5z" stroke="url(#gg)" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M22 20V38" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+  <p>Ao entrar no grupo VIP você garante acesso a uma oferta exclusiva, disponível apenas para membros do grupo.</p>
+</div>
 </section>
 
 <!-- BENEFÍCIOS -->
@@ -996,9 +1057,20 @@
     </div>
   </div>
   <div style="text-align:center;margin-top:52px;">
-    <a href="#ingresso" class="btn-primary">
-        Inscrever-me agora
+    <a href="#" onclick="event.preventDefault();abrirPopup()" class="btn-primary">
+        Entrar no grupo VIP
     </a>
+    <div class="vip-benefit fade-up">
+  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:32px;height:32px;flex-shrink:0;margin-top:2px">
+  <defs><linearGradient id="gg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs>
+  <rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg)" stroke-width="1.8"/>
+  <path d="M5 20h34v5H5z" stroke="url(#gg)" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M22 20V38" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+  <p>Ao entrar no grupo VIP você garante acesso a uma oferta exclusiva, disponível apenas para membros do grupo.</p>
+</div>
   </div>
 </section>
 
@@ -1007,9 +1079,20 @@
   <blockquote class="fade-in">
     "Acredite, você pode alcançar sua <span class="evo-gradient">melhor versão</span> com os recursos que tem disponível hoje."
   </blockquote>
-  <a href="#ingresso" class="btn-primary">
-        Inscrever-me agora
+  <a href="#" onclick="event.preventDefault();abrirPopup()" class="btn-primary">
+        Entrar no grupo VIP
   </a>
+  <div class="vip-benefit fade-up">
+  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:32px;height:32px;flex-shrink:0;margin-top:2px">
+  <defs><linearGradient id="gg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs>
+  <rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg)" stroke-width="1.8"/>
+  <path d="M5 20h34v5H5z" stroke="url(#gg)" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M22 20V38" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+  <p>Ao entrar no grupo VIP você garante acesso a uma oferta exclusiva, disponível apenas para membros do grupo.</p>
+</div>
 </section>
 
 <!-- CRONOGRAMA -->
@@ -1062,52 +1145,7 @@
   </div>
 </section>
 
-<!-- INGRESSO -->
-<section class="section-ticket" id="ingresso">
-  <h2>Escolha seu <span class="evo-gradient">acesso:</span></h2>
-  <p class="sub">Vagas limitadas — garanta já a sua participação</p>
-
-  <div class="ticket-card fade-up">
-    <div class="ticket-header">
-      <h3>Acesso Individual</h3>
-    </div>
-    <div class="ticket-body">
-      <p class="ticket-desc">Este acesso garante sua participação no evento.</p>
-      <p class="ticket-price-old">de R$ 2.497 por apenas</p>
-      <div class="ticket-price">
-        <span>R$</span>397
-      </div>
-      <p class="ticket-installments">ou 12x de R$ 40,96 no cartão</p>
-      <ul class="ticket-features">
-        <li>Participação nos 3 dias do Imersão Método EVO</li>
-        <li>Acesso a todas as ferramentas</li>
-        <li>Material de apoio</li>
-      </ul>
-      <!-- Botão abre popup -->
-      <button onclick="abrirPopup()" class="btn-ticket">INSCREVER-ME AGORA</button>
-      <p style="font-size:12px;color:var(--grey);text-align:center;">🔒 Compra 100% segura</p>
-
-      <!-- Barra de progresso -->
-      <div class="progress-wrap">
-        <div class="progress-header">
-          <span class="progress-label">Vagas preenchidas</span>
-          <span class="progress-pct" id="prog-pct">0%</span>
-        </div>
-        <div class="progress-bar-bg">
-          <div class="progress-bar-fill" id="prog-bar"></div>
-        </div>
-        <p class="progress-note">⚡ Garanta sua inscrição antes que encerre</p>
-      </div>
-    </div>
-    <div class="ticket-footer">
-      <span class="label">Total</span>
-      <span class="total">R$ 397</span>
-    </div>
-    
-  </div>
-
-  <p class="ticket-notice">* Treinamento para maiores de 16 anos.</p>
-</section>
+<!-- INGRESSO REMOVIDO TEMPORARIAMENTE -->
 
 <!-- SPEAKER -->
 <section class="section-speaker">
@@ -1122,8 +1160,8 @@
       <p>Minha família é o <strong>meu bem mais precioso</strong> e juntos temos criado memórias extraordinárias. Sou ex-servidor público e, embora tenha exercido essa função com dedicação, descobri verdadeiramente o meu propósito de vida por meio do Coaching e quero compartilhar com você todas as <strong>infinitas possibilidades</strong> de realizações que temos nessa vida de sermos felizes com aquilo que somos.</p>
       <p>Venha comigo! Eu quero apresentar para você como <strong>alcançar seus objetivos</strong> mais ousados.</p>
       <br>
-      <a href="#ingresso" class="btn-primary">
-        Inscrever-me agora
+      <a href="#" onclick="event.preventDefault();abrirPopup()" class="btn-primary">
+        Entrar no grupo VIP
       </a>
     </div>
   </div>
@@ -1206,7 +1244,7 @@
     <img src="https://ime.marciomicheli.com.br/wp-content/uploads/2024/06/ime-logo-branca-colorida.png" alt="IME" style="height:36px;margin-bottom:24px;display:block;">
 
     <!-- Título -->
-    <h3 style="font-family:'Montserrat',sans-serif;font-size:18px;font-weight:600;color:#fff;margin-bottom:8px;line-height:1.4;">Preencha com seus dados para acessar a página de compra:</h3>
+    <h3 style="font-family:'Montserrat',sans-serif;font-size:18px;font-weight:600;color:#fff;margin-bottom:8px;line-height:1.4;">Preencha seus dados para entrar no grupo VIP:</h3>
     <p style="font-size:13px;color:#888;margin-bottom:28px;font-family:'Open Sans',sans-serif;">Seus dados estão seguros e não serão compartilhados.</p>
 
     <!-- Formulário -->
@@ -1263,10 +1301,22 @@
         <span id="erro-telefone" style="display:none;font-size:11px;color:#ff4444;margin-top:4px;font-family:'Open Sans',sans-serif;"></span>
       </div>
 
+      <!-- Benefício VIP -->
+      <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:14px 16px;margin-bottom:20px;">
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:26px;height:26px;flex-shrink:0;margin-top:2px">
+  <defs><linearGradient id="gg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6B00"/><stop offset="50%" stop-color="#8B2FC9"/><stop offset="100%" stop-color="#00D4FF"/></linearGradient></defs>
+  <rect x="7" y="20" width="30" height="18" rx="2" stroke="url(#gg)" stroke-width="1.8"/>
+  <path d="M5 20h34v5H5z" stroke="url(#gg)" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M22 20V38" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M22 20c0 0-5-2-5-6a5 5 0 0 1 5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 20c0 0 5-2 5-6a5 5 0 0 0-5 6z" stroke="url(#gg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+        <p style="font-size:12px;color:#ccc;line-height:1.6;font-family:'Open Sans',sans-serif;margin:0;">Ao entrar no grupo VIP você garante acesso a uma oferta exclusiva, disponível apenas para membros do grupo.</p>
+      </div>
       <!-- Botão enviar -->
       <button type="submit" id="btn-enviar"
         style="width:100%;background:#1BB954;color:#000;font-family:'Montserrat',sans-serif;font-weight:600;font-size:16px;letter-spacing:0.04em;padding:16px;border-radius:6px;border:none;cursor:pointer;transition:background 0.2s,color 0.2s;text-transform:uppercase;">
-        INSCREVER-ME AGORA
+        ENTRAR NO GRUPO VIP
       </button>
       <p style="font-size:11px;color:#666;text-align:center;margin-top:12px;font-family:'Open Sans',sans-serif;">🔒 Seus dados estão protegidos</p>
     </form>
@@ -1295,7 +1345,7 @@
 
 <script>
   const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwgCEx5M8yyoR_E7zutCmM_3relZ0cXLDPczmXzZ3Kih2azQuhKEbCLDneSySp0YCAw/exec';
-  const CHECKOUT_URL = '#'; // Substitua pelo link do checkout
+  const CHECKOUT_URL = 'https://redirecionazap.com/r/vip-imersao-jatai/10531Xy1G5';
 
   function abrirPopup() {
     const overlay = document.getElementById('popup-overlay');
