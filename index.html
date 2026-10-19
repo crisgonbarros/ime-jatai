@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Imersão Método EVO – Jataí-GO</title>
-<!-- IME Jataí-GO | Versão 6.0 | Fase: Vendas/Carrinho -->
+<!-- IME Jataí-GO | Versão 7.0 | Fase: Vendas/Carrinho -->
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAIAEBAAAAAAIACVAQAAJgAAACAgAAAAACAAmQMAALsBAACJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAFcSURBVHicpZPBahNRGIW/O06SaUoL0iAIpX0Dd+YJSvsAfQZfw12foBtBKPgAJm7SZVdduhuyiI0prVoxQYyONpPkzn9cNFJmxgiSs7uX/xzO+e+5TpJYAcEq5KUCAqzoa4lRV4wgwK3iwAGjVJx9zJhmWkiC0glYtlxAgCHG3jju/+L8JuN1LDIvLBNJp8XswxWYB1lZwAEBjt5kyryS8rxZ5XHFMbaA4IFj3DllNngPQQju3nj4J3PClHf6Rlz9Sa1epd2bsPkl4iL2DLtvUX9E9OaIMI2pNQ9xW7sgERbzVyqeaMMTzGE9HVP9bogpLkhAHszyL6ICevqqV/OuJMnfXGrYfilJGuzvKOmcFMdVWmKDiCfhQywT7tE2XMd8fnZA1Kiz9nQPsvwSSw5Mppm8ZIvz7Q8lrRfyn/qLC8vNl4r0T0jg8jULl4zmSbI7ois3//8c/AUr/8bf19YE2tbj0V4AAAAASUVORK5CYIKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIBgAAAHN6evQAAANgSURBVHic7Zc9bBxVEMd/83bv9uK7w4Y4UkxkY6HwoYCUgIwUIYUiQBEJCUFBk4aCAiklLTQpIqCmoUBIUEAHQqkjUBSsBCxjGROBsY2NPxKTM+fYd7d3uztDsecYJz7fERem8EjbvH2785t5/5nZFTMz9tDcXjrfB9gH+F8A+P9ls/6rYAUQabHRbIebW0120wesCbIb6ygDG4Tf3Yj5uWR0O+HMoEfvAdkWon59nODJpzvKQlsNbDj4fLbGJ1Mh15ZjLk4lXLiccLu+FRDA6iHlzz5Ga9UOQmsDoJY6n1hv8H05pCcw3nwiwwensjRqwsUJQ0iPHFUAosV5qlevEC/MNV+i9w+ApNGNVmu4TMTDeTjd5zPYLbw95BibhETBCZgapkY4Pkb0V4lw/CdQxew+AAxDMVzKwIrUCIKIYpCkUAbH+oSHElhYBksATxAnrP84jmVy1MaGwTnEeaAxaNI5gCA4UoHN6DqVbIXufMytuM5kOUINnIPjh4VKFcQDU+H2yCzlqzO4Bw/SmLhMY2I4FaLzwXnbJ/nuMmyQMM0KM1ZmkZC/EyWJMmiYpV7O0bh5gHypiwHN4uaMYkUpzIaEP0zStf4tPT2j5LunyGUXyQSr5Pr7CB4fInP8DN6JV5BccfN8aVGGcicLhnMKfoLLxGgQoYGPc4qYUUgquFIEGuFcCSeriFQRqSHSQKwBcR2L66BRKqi76rZtI/qTdb5OZqhHgl/L8VrQT3+QxXnC8pVpbl1f5thbJ7E4ZvXaryy89w45b5qgWOXQu58SnHgRpLXWdxShAf0UGHBdhH6NRwsZHukKEGeoQu6gUhv+Ek1APEfP809ReKwHW1vCOzRA8MzLqfNkQ4T3xtpGhCnEgBTARQz6XXey6BwUjw6QW71EZeQSiMMMXDiP0wqZ/qNgmjr3NkR4b2fcsQ9I8zpCgQfE44jkm0PIYUmM+Fl6XzjF8vmz1H8bYe2rj9D5UXzfyJ9+o5n6Nu3YOrC6xfaN/WKRJZuLmpipWryyZHOv99r0s9gfJ7HZIaz0/lkzVbMkaf3SpnU8DW+wxmGKWxdNQRzx0u+sffEhWrpJ7rmXyL96bjPyNgNpV+M4heh89m9nHX+QtJz9ImkmNiaXGXjbC27bx/d/TPYB9gH2GuAfupDbVCV3uH0AAAAASUVORK5CYII=">
@@ -647,7 +647,7 @@
     line-height: 1;
     margin-bottom: 6px;
   }
-  .ticket-price span {
+  .ticket-price .mn-cur {
     font-size: 28px;
     vertical-align: top;
     padding-top: 10px;
@@ -1271,6 +1271,63 @@
     })(window, document, "clarity", "script", "xvklwkyafc");
   </script>
   <!-- Fim Microsoft Clarity -->
+<!-- ===================== PREÇO ODÔMETRO (CSS) ===================== -->
+<style>
+/* Valores padrão. Para a identidade da página, defina estas variáveis em .mn-price no CSS da própria página
+   (o :where() deixa a especificidade zero: a definição da página sempre vence, em qualquer ordem). */
+:where(.mn-price){
+  --mn-g1:#fff6c9;               /* topo do dígito (tom mais claro da cor de destaque)   */
+  --mn-g2:#ffd633;               /* meio do dígito (cor de destaque principal)           */
+  --mn-g3:#f1b92f;               /* base do dígito (tom mais escuro da cor de destaque)  */
+  --mn-shine:rgba(255,255,255,.95); /* faixa de brilho que passa pelos números          */
+  --mn-glow:rgba(255,214,51,.38);   /* halo atrás do preço (destaque com transparência) */
+  --mn-glow2:rgba(255,214,51,.14);
+  --mn-cur:#fff;                 /* "R$" e ",00"                                         */
+  --mn-text:#d9c7f5;             /* "De R$ ..." e texto do parcelamento                  */
+  --mn-accent:#ffd633;           /* "à vista no Pix"                                     */
+  --mn-h:1em;                    /* altura de cada dígito: NÃO alterar                  */
+}
+.mn-price .mn-cur,.mn-price .mn-cents{color:var(--mn-cur)}
+.mn-price .mn-was,.mn-price .mn-alt{color:var(--mn-text)}
+.mn-price .mn-via{color:var(--mn-accent)}
+.mn-price .mn-big{background:linear-gradient(180deg,var(--mn-g1) 0%,var(--mn-g2) 52%,var(--mn-g3) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.mn-price .mn-big.mn-built{background:none;-webkit-text-fill-color:currentColor}
+.mn-sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.mn-reels{display:inline-flex;line-height:var(--mn-h);height:var(--mn-h);vertical-align:bottom}
+.mn-reel{position:relative;display:block;width:var(--mn-w,.62em);height:var(--mn-h);overflow:hidden;text-align:center;transition:width .42s cubic-bezier(.5,0,.2,1),opacity .3s ease,filter .34s ease}
+.mn-reel.mn-gone{width:0;opacity:0;filter:blur(7px)}
+.mn-strip{display:block;transform:translateY(calc(var(--mn-from)*var(--mn-h)*-1));will-change:transform;transition:filter .3s ease}
+.mn-strip i{display:block;height:var(--mn-h);line-height:var(--mn-h);font-style:normal;background:linear-gradient(105deg,transparent 0 38%,var(--mn-shine) 50%,transparent 62% 100%) 150% 0/260% 100% no-repeat,linear-gradient(180deg,var(--mn-g1) 0%,var(--mn-g2) 52%,var(--mn-g3) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.mn-reel.mn-blur .mn-strip{filter:blur(2.2px)}
+.mn-reel.mn-blur{-webkit-mask-image:linear-gradient(transparent,#000 16%,#000 84%,transparent);mask-image:linear-gradient(transparent,#000 16%,#000 84%,transparent)}
+.mn-end .mn-strip{transform:translateY(calc(var(--mn-to)*var(--mn-h)*-1))}
+.mn-shine .mn-strip i{animation:mn-shine .95s cubic-bezier(.4,0,.2,1) var(--mn-sd,0s) 1 both}
+@keyframes mn-shine{from{background-position:150% 0,0 0}to{background-position:-60% 0,0 0}}
+.mn-now{position:relative;isolation:isolate}
+.mn-now::before{content:"";position:absolute;z-index:-1;inset:-34% 0;border-radius:50%;background:radial-gradient(closest-side,var(--mn-glow) 0%,var(--mn-glow2) 52%,transparent 100%);opacity:0;scale:.6;transition:opacity .6s ease,scale .9s cubic-bezier(.2,.8,.3,1.2);pointer-events:none}
+.mn-armed.mn-pop .mn-now::before{opacity:1;scale:1}
+.mn-notrans,.mn-notrans *{transition:none!important;animation:none!important}
+.mn-armed .mn-was,.mn-armed .mn-alt,.mn-armed .mn-via{opacity:0;transform:translateY(8px);filter:blur(4px)}
+.mn-armed.mn-done .mn-was,.mn-armed.mn-done .mn-alt,.mn-armed.mn-done .mn-via{opacity:1;transform:none;filter:none;transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.3,1),filter .6s ease}
+.mn-armed.mn-done .mn-via{transition-delay:.07s}
+.mn-armed.mn-done .mn-alt{transition-delay:.14s}
+.mn-armed.mn-pop .mn-now{animation:mn-pop .62s cubic-bezier(.2,.9,.3,1.35)}
+@keyframes mn-pop{0%{scale:1}38%{scale:1.14}68%{scale:.985}100%{scale:1}}
+</style>
+
+<!-- Preço odômetro: cores da identidade EVO -->
+<style>
+.mn-price{
+  --mn-g1:#FF6B00;               /* topo do dígito: laranja EVO  */
+  --mn-g2:#8B2FC9;               /* meio do dígito: roxo EVO     */
+  --mn-g3:#00D4FF;               /* base do dígito: ciano EVO    */
+  --mn-glow:rgba(139,47,201,.35);
+  --mn-glow2:rgba(255,107,0,.12);
+  --mn-cur:var(--white);
+  --mn-text:var(--grey);
+  --mn-accent:var(--cyan);
+}
+</style>
 </head>
 <body>
 
@@ -1526,9 +1583,11 @@
       <div class="ticket-header"><h3>Acesso Individual</h3></div>
       <div class="ticket-body">
         <p class="ticket-desc">Este acesso garante sua participação no evento.</p>
-        <p class="ticket-price-old">de R$ 2.497 por apenas</p>
-        <div class="ticket-price"><span>R$</span>390</div>
-        <p class="ticket-installments">ou 12x de R$ 40,24 no cartão</p>
+        <div class="mn-price" data-de="2.497" data-por="390">
+          <p class="ticket-price-old mn-was">de R$ 2.497 por apenas</p>
+          <div class="ticket-price mn-now"><span class="mn-cur">R$</span><span class="mn-big">390</span></div>
+          <p class="ticket-installments mn-alt">ou 12x de R$ 40,24 no cartão</p>
+        </div>
         <ul class="ticket-features">
           <li>Participação nos 3 dias do Imersão Método EVO</li>
           <li>Acesso a todas as ferramentas</li>
@@ -1551,9 +1610,11 @@
       <div class="ticket-header"><h3>Acesso Duplo</h3></div>
       <div class="ticket-body">
         <p class="ticket-desc">Você + 1 convidado.</p>
-        <p class="ticket-price-old">de R$ 2.497 + 1 ingresso bônus por apenas</p>
-        <div class="ticket-price"><span>R$</span>640</div>
-        <p class="ticket-installments">ou 12x de R$ 66,03 no cartão</p>
+        <div class="mn-price" data-de="2.497" data-por="640">
+          <p class="ticket-price-old mn-was">de R$ 2.497 + 1 ingresso bônus por apenas</p>
+          <div class="ticket-price mn-now"><span class="mn-cur">R$</span><span class="mn-big">640</span></div>
+          <p class="ticket-installments mn-alt">ou 12x de R$ 66,03 no cartão</p>
+        </div>
         <ul class="ticket-features">
           <li>2 participações nos 3 dias do Imersão Método EVO</li>
           <li>Acesso a todas as ferramentas</li>
@@ -1578,9 +1639,11 @@
       <div class="ticket-header"><h3>Acesso Triplo</h3></div>
       <div class="ticket-body">
         <p class="ticket-desc">Você + 2 convidados.</p>
-        <p class="ticket-price-old">de R$ 2.497 + 2 ingressos bônus por apenas</p>
-        <div class="ticket-price"><span>R$</span>780</div>
-        <p class="ticket-installments">ou 12x de R$ 80,48 no cartão</p>
+        <div class="mn-price" data-de="2.497" data-por="780">
+          <p class="ticket-price-old mn-was">de R$ 2.497 + 2 ingressos bônus por apenas</p>
+          <div class="ticket-price mn-now"><span class="mn-cur">R$</span><span class="mn-big">780</span></div>
+          <p class="ticket-installments mn-alt">ou 12x de R$ 80,48 no cartão</p>
+        </div>
         <ul class="ticket-features">
           <li>3 participações nos 3 dias do Imersão Método EVO</li>
           <li>Acesso a todas as ferramentas</li>
@@ -1947,5 +2010,99 @@
   }
 </script>
 
+<!-- ===================== PREÇO ODÔMETRO (JS) ===================== -->
+<script>
+/* Preço odômetro: cada dígito gira com inércia de data-de até data-por, passa um pouco do ponto e assenta
+   como uma mola. Roda toda vez que o bloco entra na tela; ao sair, volta ao valor cheio sem a pessoa ver.
+   Funciona com vários blocos .mn-price na mesma página. Sem JS ou com movimento reduzido: mostra o preço final. */
+(function () {
+  if (!("IntersectionObserver" in window)) return;
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var fmt = function (v) { return String(parseInt(v, 10)).replace(/\B(?=(\d{3})+(?!\d))/g, "."); };
+  var intPart = function (v) { return String(v).split(",")[0].replace(/\D/g, ""); };
+  var centsPart = function (v) { var c = String(v).split(",")[1]; return c ? (c.replace(/\D/g, "") + "00").slice(0, 2) : "00"; };
+
+  [].slice.call(document.querySelectorAll(".mn-price[data-de][data-por]")).forEach(function (root) {
+    var big = root.querySelector(".mn-big"), was = root.querySelector(".mn-was s");
+    var deRaw = root.getAttribute("data-de"), de = intPart(deRaw), por = intPart(root.getAttribute("data-por"));
+    if (!big || !de || !por) return;
+    var n = Math.max(de.length, por.length);
+    while (de.length < n) de = "0" + de;
+    while (por.length < n) por = "0" + por;
+    if (was) was.textContent = "R$ " + fmt(de) + "," + centsPart(deRaw);
+    var label = String(parseInt(por, 10));
+    var html = "", dur = [], cyc = [];
+    for (var i = 0; i < n; i++) {
+      var cycles = 2 + i, items = "";
+      for (var k = 0; k < (cycles + 1) * 10; k++) items += "<i>" + (k % 10) + "</i>";
+      var lead = por.charAt(i) === "0" && /^0*$/.test(por.slice(0, i + 1));
+      cyc.push(cycles); dur.push(1000 + i * 420);
+      html += '<span class="mn-reel' + (lead ? " mn-lead" : "") + '" style="--mn-from:' + de.charAt(i) +
+        ";--mn-to:" + (parseInt(por.charAt(i), 10) + 10 * cycles) + ";--mn-sd:" + (i * 0.09).toFixed(2) +
+        's"><span class="mn-strip">' + items + "</span></span>";
+    }
+    big.innerHTML = '<span class="mn-sr">' + label + '</span><span class="mn-reels" aria-hidden="true">' + html + "</span>";
+    big.classList.add("mn-built");
+    var reelEls = [].slice.call(big.querySelectorAll(".mn-reel"));
+    // largura de cada rolo = largura real do dígito final, para o preço parado ficar idêntico ao texto original
+    function measure() {
+      var fs = parseFloat(getComputedStyle(big).fontSize) || 16;
+      reelEls.forEach(function (r, i) {
+        var t = document.createElement("span");
+        t.style.cssText = "position:absolute;visibility:hidden;white-space:nowrap";
+        t.textContent = por.charAt(i); big.appendChild(t);
+        r.style.setProperty("--mn-w", (t.getBoundingClientRect().width / fs).toFixed(3) + "em");
+        big.removeChild(t);
+      });
+    }
+    measure();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+    root.classList.add("mn-armed");
+    var timers = [], anims = [], playing = false;
+    function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
+    function reset() {
+      timers.forEach(clearTimeout); timers = [];
+      anims.forEach(function (a) { try { a.cancel(); } catch (e) {} }); anims = [];
+      root.classList.add("mn-notrans");
+      root.classList.remove("mn-end", "mn-done", "mn-pop", "mn-shine");
+      reelEls.forEach(function (r) { r.classList.remove("mn-gone", "mn-blur"); });
+      void root.offsetWidth;
+      root.classList.remove("mn-notrans");
+      playing = false;
+    }
+    function play() {
+      reset(); playing = true;
+      later(function () {
+        var last = dur[n - 1];
+        reelEls.forEach(function (r, i) {
+          var strip = r.firstChild, from = parseInt(de.charAt(i), 10), to = parseInt(por.charAt(i), 10) + 10 * cyc[i];
+          var h = function (v) { return "translateY(" + (-v) + "em)"; };
+          r.classList.add("mn-blur");
+          if (strip.animate) {
+            anims.push(strip.animate([
+              { transform: h(from), easing: "cubic-bezier(.4,.02,.18,1)" },
+              { transform: h(to + 0.34), offset: 0.78, easing: "cubic-bezier(.35,0,.25,1)" },
+              { transform: h(to) }
+            ], { duration: dur[i], fill: "forwards" }));
+          } else { r.classList.remove("mn-blur"); root.classList.add("mn-end"); }
+          later(function () { r.classList.remove("mn-blur"); }, dur[i] * 0.66);
+        });
+        later(function () {
+          reelEls.forEach(function (r) { if (r.classList.contains("mn-lead")) r.classList.add("mn-gone"); });
+        }, dur[Math.max(n - 2, 0)] * 0.74);
+        later(function () { root.classList.add("mn-pop", "mn-shine"); }, last * 0.9);
+        later(function () { root.classList.add("mn-done"); }, last * 0.9 + 260);
+      }, 650);
+    }
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting && e.intersectionRatio >= 0.6) { if (!playing) play(); }
+        else if (!e.isIntersecting) { reset(); }
+      });
+    }, { threshold: [0, 0.6] });
+    io.observe(root);
+  });
+})();
+</script>
 </body>
 </html>
