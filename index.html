@@ -1329,33 +1329,44 @@
 }
 </style>
 
-<!-- Headline: sublinhado, marca-texto e brilho em sequência de leitura (só CSS) -->
+<!-- Headline: sublinhado, marca-texto e brilho em sequência de leitura (só CSS)
+     Linha do tempo: sublinhado 1,2–2,6 s | marca-texto 3,4–4,3 s | brilho a partir de 4,8 s
+     Sublinhado some em 7,0–7,8 s | marca-texto some em 7,4–8,2 s (recolhem para a direita)
+     Recomeça sempre que o título volta à tela (classe .hl-play, controlada no fim do body) -->
 <style>
 .hl-ul{
   background:linear-gradient(90deg,#FF6B00,#8B2FC9,#00D4FF) no-repeat 0 100%/0% 2px;
   -webkit-box-decoration-break:slice;box-decoration-break:slice;
   padding-bottom:.04em;
-  animation:hl-draw 1.3s cubic-bezier(.6,0,.2,1) .5s forwards;
 }
-@keyframes hl-draw{to{background-size:100% 2px}}
+.hl-play .hl-ul{animation:hl-ul 6.6s cubic-bezier(.6,0,.2,1) 1.2s forwards}
+@keyframes hl-ul{
+  0%{background-size:0% 2px;background-position:0 100%}
+  21.2%{background-size:100% 2px;background-position:0 100%}
+  87.9%{background-size:100% 2px;background-position:100% 100%}
+  100%{background-size:0% 2px;background-position:100% 100%}
+}
 .hl-grad{
   background:linear-gradient(90deg,#FF6B00 0%,#8B2FC9 25%,#00D4FF 50%,#8B2FC9 75%,#FF6B00 100%) 0 0/200% 100% repeat-x;
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
   -webkit-box-decoration-break:slice;box-decoration-break:slice;
-  animation:hl-shine 8s linear 3.2s infinite;
 }
+.hl-play .hl-grad{animation:hl-shine 8s linear 4.8s infinite}
 @keyframes hl-shine{to{background-position:-200% 0}}
 .hl-mark{
   background:linear-gradient(90deg,rgba(255,107,0,.5),rgba(139,47,201,.5)) no-repeat 0 90%/0% 40%;
   -webkit-box-decoration-break:slice;box-decoration-break:slice;
   padding:0 .06em;margin:0 -.06em;
-  animation:hl-mark .8s cubic-bezier(.6,0,.2,1) 1.9s forwards;
 }
-@keyframes hl-mark{to{background-size:100% 40%}}
+.hl-play .hl-mark{animation:hl-mark 4.8s cubic-bezier(.6,0,.2,1) 3.4s forwards}
+@keyframes hl-mark{
+  0%{background-size:0% 40%;background-position:0 90%}
+  18.75%{background-size:100% 40%;background-position:0 90%}
+  83.3%{background-size:100% 40%;background-position:100% 90%}
+  100%{background-size:0% 40%;background-position:100% 90%}
+}
 @media (prefers-reduced-motion:reduce){
-  .hl-ul{animation:none;background-size:100% 2px}
-  .hl-mark{animation:none;background-size:100% 40%}
-  .hl-grad{animation:none}
+  .hl-play .hl-ul,.hl-play .hl-mark,.hl-play .hl-grad{animation:none}
 }
 </style>
 </head>
@@ -2132,6 +2143,22 @@
     }, { threshold: [0, 0.6] });
     io.observe(root);
   });
+})();
+</script>
+<!-- Headline: reinicia os efeitos sempre que o título volta à tela -->
+<script>
+(function () {
+  var h = document.querySelector('.hero h1');
+  if (!h || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var nav = document.querySelector('nav');
+  var top = nav ? Math.round(nav.getBoundingClientRect().height) : 0;
+  new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (e.isIntersecting) { if (!h.classList.contains('hl-play')) { void h.offsetWidth; h.classList.add('hl-play'); } }
+      else { h.classList.remove('hl-play'); }
+    });
+  }, { rootMargin: '-' + top + 'px 0px 0px 0px', threshold: 0 }).observe(h);
 })();
 </script>
 </body>
