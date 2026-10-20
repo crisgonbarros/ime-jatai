@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Imersão Método EVO – Jataí-GO</title>
-<!-- IME Jataí-GO | Versão 7.4 | Fase: Vendas/Carrinho -->
+<!-- IME Jataí-GO | Versão 7.5 | Fase: Vendas/Carrinho -->
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAIAEBAAAAAAIACVAQAAJgAAACAgAAAAACAAmQMAALsBAACJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAFcSURBVHicpZPBahNRGIW/O06SaUoL0iAIpX0Dd+YJSvsAfQZfw12foBtBKPgAJm7SZVdduhuyiI0prVoxQYyONpPkzn9cNFJmxgiSs7uX/xzO+e+5TpJYAcEq5KUCAqzoa4lRV4wgwK3iwAGjVJx9zJhmWkiC0glYtlxAgCHG3jju/+L8JuN1LDIvLBNJp8XswxWYB1lZwAEBjt5kyryS8rxZ5XHFMbaA4IFj3DllNngPQQju3nj4J3PClHf6Rlz9Sa1epd2bsPkl4iL2DLtvUX9E9OaIMI2pNQ9xW7sgERbzVyqeaMMTzGE9HVP9bogpLkhAHszyL6ICevqqV/OuJMnfXGrYfilJGuzvKOmcFMdVWmKDiCfhQywT7tE2XMd8fnZA1Kiz9nQPsvwSSw5Mppm8ZIvz7Q8lrRfyn/qLC8vNl4r0T0jg8jULl4zmSbI7ois3//8c/AUr/8bf19YE2tbj0V4AAAAASUVORK5CYIKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIBgAAAHN6evQAAANgSURBVHic7Zc9bBxVEMd/83bv9uK7w4Y4UkxkY6HwoYCUgIwUIYUiQBEJCUFBk4aCAiklLTQpIqCmoUBIUEAHQqkjUBSsBCxjGROBsY2NPxKTM+fYd7d3uztDsecYJz7fERem8EjbvH2785t5/5nZFTMz9tDcXjrfB9gH+F8A+P9ls/6rYAUQabHRbIebW0120wesCbIb6ygDG4Tf3Yj5uWR0O+HMoEfvAdkWon59nODJpzvKQlsNbDj4fLbGJ1Mh15ZjLk4lXLiccLu+FRDA6iHlzz5Ga9UOQmsDoJY6n1hv8H05pCcw3nwiwwensjRqwsUJQ0iPHFUAosV5qlevEC/MNV+i9w+ApNGNVmu4TMTDeTjd5zPYLbw95BibhETBCZgapkY4Pkb0V4lw/CdQxew+AAxDMVzKwIrUCIKIYpCkUAbH+oSHElhYBksATxAnrP84jmVy1MaGwTnEeaAxaNI5gCA4UoHN6DqVbIXufMytuM5kOUINnIPjh4VKFcQDU+H2yCzlqzO4Bw/SmLhMY2I4FaLzwXnbJ/nuMmyQMM0KM1ZmkZC/EyWJMmiYpV7O0bh5gHypiwHN4uaMYkUpzIaEP0zStf4tPT2j5LunyGUXyQSr5Pr7CB4fInP8DN6JV5BccfN8aVGGcicLhnMKfoLLxGgQoYGPc4qYUUgquFIEGuFcCSeriFQRqSHSQKwBcR2L66BRKqi76rZtI/qTdb5OZqhHgl/L8VrQT3+QxXnC8pVpbl1f5thbJ7E4ZvXaryy89w45b5qgWOXQu58SnHgRpLXWdxShAf0UGHBdhH6NRwsZHukKEGeoQu6gUhv+Ek1APEfP809ReKwHW1vCOzRA8MzLqfNkQ4T3xtpGhCnEgBTARQz6XXey6BwUjw6QW71EZeQSiMMMXDiP0wqZ/qNgmjr3NkR4b2fcsQ9I8zpCgQfE44jkm0PIYUmM+Fl6XzjF8vmz1H8bYe2rj9D5UXzfyJ9+o5n6Nu3YOrC6xfaN/WKRJZuLmpipWryyZHOv99r0s9gfJ7HZIaz0/lkzVbMkaf3SpnU8DW+wxmGKWxdNQRzx0u+sffEhWrpJ7rmXyL96bjPyNgNpV+M4heh89m9nHX+QtJz9ImkmNiaXGXjbC27bx/d/TPYB9gH2GuAfupDbVCV3uH0AAAAASUVORK5CYII=">
@@ -1407,6 +1407,33 @@
   100%{background-size:0% 2px;background-position:100% 100%}
 }
 @media (prefers-reduced-motion:reduce){.sub-ul.sub-play{animation:none}}
+</style>
+
+<!-- Efeito vidro: faixa de luz que atravessa o selo do topo e todos os botões (a cada 5 s) + fio de luz fixo no alto dos botões -->
+<style>
+.hero-eyebrow,.btn-primary,.btn-ticket,.nav-cta,#btn-enviar{position:relative;overflow:hidden;isolation:isolate}
+.hero-eyebrow::after,.btn-primary::after,.btn-ticket::after,.nav-cta::after,#btn-enviar::after{
+  content:"";position:absolute;top:-10%;bottom:-10%;left:0;width:45%;pointer-events:none;z-index:1;
+  background:linear-gradient(105deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 22%,rgba(255,255,255,var(--glass-a,.5)) 50%,rgba(255,255,255,0) 78%,rgba(255,255,255,0) 100%);
+  transform:translateX(-160%) skewX(-18deg);
+  animation:glass-shine 5s cubic-bezier(.45,0,.25,1) var(--glass-d,0s) infinite;
+}
+.hero-eyebrow{--glass-a:.32}
+/* Superfície de vidro: fio de luz no alto + brilho suave na metade de cima (fica atrás do texto) */
+.btn-primary::before,.btn-ticket::before,.nav-cta::before,#btn-enviar::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;
+  background:linear-gradient(180deg,rgba(255,255,255,.6) 0,rgba(255,255,255,.6) 1px,rgba(255,255,255,.2) 1px,rgba(255,255,255,0) 55%);
+}
+.hero-btn-desktop,#hero-btn-clone{--glass-d:.35s}
+.nav-cta{--glass-d:.7s}
+@keyframes glass-shine{
+  0%{transform:translateX(-160%) skewX(-18deg)}
+  20%{transform:translateX(330%) skewX(-18deg)}
+  100%{transform:translateX(330%) skewX(-18deg)}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-eyebrow::after,.btn-primary::after,.btn-ticket::after,.nav-cta::after,#btn-enviar::after{animation:none;display:none}
+}
 </style>
 </head>
 <body>
