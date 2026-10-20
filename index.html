@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Imersão Método EVO – Jataí-GO</title>
-<!-- IME Jataí-GO | Versão 7.3 | Fase: Vendas/Carrinho -->
+<!-- IME Jataí-GO | Versão 7.4 | Fase: Vendas/Carrinho -->
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAIAEBAAAAAAIACVAQAAJgAAACAgAAAAACAAmQMAALsBAACJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAFcSURBVHicpZPBahNRGIW/O06SaUoL0iAIpX0Dd+YJSvsAfQZfw12foBtBKPgAJm7SZVdduhuyiI0prVoxQYyONpPkzn9cNFJmxgiSs7uX/xzO+e+5TpJYAcEq5KUCAqzoa4lRV4wgwK3iwAGjVJx9zJhmWkiC0glYtlxAgCHG3jju/+L8JuN1LDIvLBNJp8XswxWYB1lZwAEBjt5kyryS8rxZ5XHFMbaA4IFj3DllNngPQQju3nj4J3PClHf6Rlz9Sa1epd2bsPkl4iL2DLtvUX9E9OaIMI2pNQ9xW7sgERbzVyqeaMMTzGE9HVP9bogpLkhAHszyL6ICevqqV/OuJMnfXGrYfilJGuzvKOmcFMdVWmKDiCfhQywT7tE2XMd8fnZA1Kiz9nQPsvwSSw5Mppm8ZIvz7Q8lrRfyn/qLC8vNl4r0T0jg8jULl4zmSbI7ois3//8c/AUr/8bf19YE2tbj0V4AAAAASUVORK5CYIKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIBgAAAHN6evQAAANgSURBVHic7Zc9bBxVEMd/83bv9uK7w4Y4UkxkY6HwoYCUgIwUIYUiQBEJCUFBk4aCAiklLTQpIqCmoUBIUEAHQqkjUBSsBCxjGROBsY2NPxKTM+fYd7d3uztDsecYJz7fERem8EjbvH2785t5/5nZFTMz9tDcXjrfB9gH+F8A+P9ls/6rYAUQabHRbIebW0120wesCbIb6ygDG4Tf3Yj5uWR0O+HMoEfvAdkWon59nODJpzvKQlsNbDj4fLbGJ1Mh15ZjLk4lXLiccLu+FRDA6iHlzz5Ga9UOQmsDoJY6n1hv8H05pCcw3nwiwwensjRqwsUJQ0iPHFUAosV5qlevEC/MNV+i9w+ApNGNVmu4TMTDeTjd5zPYLbw95BibhETBCZgapkY4Pkb0V4lw/CdQxew+AAxDMVzKwIrUCIKIYpCkUAbH+oSHElhYBksATxAnrP84jmVy1MaGwTnEeaAxaNI5gCA4UoHN6DqVbIXufMytuM5kOUINnIPjh4VKFcQDU+H2yCzlqzO4Bw/SmLhMY2I4FaLzwXnbJ/nuMmyQMM0KM1ZmkZC/EyWJMmiYpV7O0bh5gHypiwHN4uaMYkUpzIaEP0zStf4tPT2j5LunyGUXyQSr5Pr7CB4fInP8DN6JV5BccfN8aVGGcicLhnMKfoLLxGgQoYGPc4qYUUgquFIEGuFcCSeriFQRqSHSQKwBcR2L66BRKqi76rZtI/qTdb5OZqhHgl/L8VrQT3+QxXnC8pVpbl1f5thbJ7E4ZvXaryy89w45b5qgWOXQu58SnHgRpLXWdxShAf0UGHBdhH6NRwsZHukKEGeoQu6gUhv+Ek1APEfP809ReKwHW1vCOzRA8MzLqfNkQ4T3xtpGhCnEgBTARQz6XXey6BwUjw6QW71EZeQSiMMMXDiP0wqZ/qNgmjr3NkR4b2fcsQ9I8zpCgQfE44jkm0PIYUmM+Fl6XzjF8vmz1H8bYe2rj9D5UXzfyJ9+o5n6Nu3YOrC6xfaN/WKRJZuLmpipWryyZHOv99r0s9gfJ7HZIaz0/lkzVbMkaf3SpnU8DW+wxmGKWxdNQRzx0u+sffEhWrpJ7rmXyL96bjPyNgNpV+M4heh89m9nHX+QtJz9ImkmNiaXGXjbC27bx/d/TPYB9gH2GuAfupDbVCV3uH0AAAAASUVORK5CYII=">
@@ -1391,6 +1391,23 @@
   .hl-play .hl-ul,.hl-play .hl-mark,.hl-play .hl-grad{animation:none}
 }
 </style>
+
+<!-- Subtítulos: traço fino com degradê EVO quando a pessoa chega à seção (desenha, fica, recolhe; repete ao voltar) -->
+<style>
+.sub-ul{
+  background:linear-gradient(90deg,#FF6B00,#8B2FC9,#00D4FF) no-repeat 0 100%/0% 2px;
+  -webkit-box-decoration-break:slice;box-decoration-break:slice;
+  padding-bottom:.04em;
+}
+.sub-ul.sub-play{animation:sub-ul 5.2s cubic-bezier(.6,0,.2,1) .3s forwards}
+@keyframes sub-ul{
+  0%{background-size:0% 2px;background-position:0 100%}
+  19.2%{background-size:100% 2px;background-position:0 100%}
+  84.6%{background-size:100% 2px;background-position:100% 100%}
+  100%{background-size:0% 2px;background-position:100% 100%}
+}
+@media (prefers-reduced-motion:reduce){.sub-ul.sub-play{animation:none}}
+</style>
 </head>
 <body>
 
@@ -1450,7 +1467,7 @@
 <!-- VIDEO -->
 <section class="section-video">
   <p class="sub">3 DIAS DE TRANSFORMAÇÃO PESSOAL COM FERRAMENTAS E TÉCNICAS PARA VOCÊ</p>
-  <h2><span class="evo-gradient">Mudar a sua vida para melhor</span> e para sempre!</h2>
+  <h2><span class="sub-ul"><span class="evo-gradient">Mudar a sua vida para melhor</span></span> e para sempre!</h2>
   <div class="video-wrap">
     <iframe id="yt-player" data-src="https://www.youtube.com/embed/awAhT4j2ECo?autoplay=1&mute=1&enablejsapi=1&controls=0&rel=0&playsinline=1" title="Imersão Método EVO" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     <button id="btn-mute-yt" onclick="toggleMute()" title="Ativar/desativar som">
@@ -1479,7 +1496,7 @@
 
 <!-- BENEFÍCIOS -->
 <section class="section-benefits">
-  <h2>Alcance sua <span class="evo-gradient">melhor versão</span></h2>
+  <h2>Alcance sua <span class="sub-ul"><span class="evo-gradient">melhor versão</span></span></h2>
   <div class="benefits-grid">
     <div class="benefit-card fade-up delay-1">
       <div class="benefit-icon"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1547,7 +1564,7 @@
 <!-- PARA VOCÊ -->
 <section class="section-foryou">
   <div class="foryou-inner">
-    <h2>Esse evento é <span class="evo-gradient">para você</span> que:</h2>
+    <h2>Esse evento é <span class="sub-ul"><span class="evo-gradient">para você</span></span> que:</h2>
     <ul class="foryou-list fade-left">
       <li>Já tentou de tudo para que seus RELACIONAMENTOS dessem certo, mas até hoje não encontrou a resposta.</li>
       <li>Tem vontade de conquistar relacionamentos saudáveis e duradouros.</li>
@@ -1574,7 +1591,7 @@
 <!-- QUOTE -->
 <section class="section-quote">
   <blockquote class="fade-in">
-    "Acredite, você pode alcançar sua <span class="evo-gradient">melhor versão</span> com os recursos que tem disponível hoje."
+    "Acredite, você pode alcançar sua <span class="sub-ul"><span class="evo-gradient">melhor versão</span></span> com os recursos que tem disponível hoje."
   </blockquote>
   <a href="#ingresso" class="btn-primary">
         Inscrever-me agora
@@ -1633,7 +1650,7 @@
 
 <!-- INGRESSO -->
 <section class="section-ticket" id="ingresso">
-  <h2>Escolha seu <span class="evo-gradient">acesso:</span></h2>
+  <h2>Escolha seu <span class="sub-ul"><span class="evo-gradient">acesso:</span></span></h2>
   <p class="sub">Vagas limitadas — garanta já a sua participação</p>
 
   <div class="tickets-grid">
@@ -2250,6 +2267,24 @@
       else { h.classList.remove('hl-play'); }
     });
   }, { rootMargin: '-' + top + 'px 0px 0px 0px', threshold: 0 }).observe(h);
+})();
+</script>
+<!-- Subtítulos: dispara o traço quando cada um aparece na tela e zera quando sai -->
+<script>
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var nav = document.querySelector('nav');
+  var top = nav ? Math.round(nav.getBoundingClientRect().height) : 0;
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      var el = e.target;
+      if (e.isIntersecting && e.intersectionRatio >= 0.6) {
+        if (!el.classList.contains('sub-play')) { void el.offsetWidth; el.classList.add('sub-play'); }
+      } else if (!e.isIntersecting) { el.classList.remove('sub-play'); }
+    });
+  }, { rootMargin: '-' + top + 'px 0px -20% 0px', threshold: [0, 0.6] });
+  [].forEach.call(document.querySelectorAll('.sub-ul'), function (el) { io.observe(el); });
 })();
 </script>
 </body>
