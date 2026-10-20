@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Imersão Método EVO – Jataí-GO</title>
-<!-- IME Jataí-GO | Versão 7.2 | Fase: Vendas/Carrinho -->
+<!-- IME Jataí-GO | Versão 7.3 | Fase: Vendas/Carrinho -->
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAIAEBAAAAAAIACVAQAAJgAAACAgAAAAACAAmQMAALsBAACJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAFcSURBVHicpZPBahNRGIW/O06SaUoL0iAIpX0Dd+YJSvsAfQZfw12foBtBKPgAJm7SZVdduhuyiI0prVoxQYyONpPkzn9cNFJmxgiSs7uX/xzO+e+5TpJYAcEq5KUCAqzoa4lRV4wgwK3iwAGjVJx9zJhmWkiC0glYtlxAgCHG3jju/+L8JuN1LDIvLBNJp8XswxWYB1lZwAEBjt5kyryS8rxZ5XHFMbaA4IFj3DllNngPQQju3nj4J3PClHf6Rlz9Sa1epd2bsPkl4iL2DLtvUX9E9OaIMI2pNQ9xW7sgERbzVyqeaMMTzGE9HVP9bogpLkhAHszyL6ICevqqV/OuJMnfXGrYfilJGuzvKOmcFMdVWmKDiCfhQywT7tE2XMd8fnZA1Kiz9nQPsvwSSw5Mppm8ZIvz7Q8lrRfyn/qLC8vNl4r0T0jg8jULl4zmSbI7ois3//8c/AUr/8bf19YE2tbj0V4AAAAASUVORK5CYIKJUE5HDQoaCgAAAA1JSERSAAAAIAAAACAIBgAAAHN6evQAAANgSURBVHic7Zc9bBxVEMd/83bv9uK7w4Y4UkxkY6HwoYCUgIwUIYUiQBEJCUFBk4aCAiklLTQpIqCmoUBIUEAHQqkjUBSsBCxjGROBsY2NPxKTM+fYd7d3uztDsecYJz7fERem8EjbvH2785t5/5nZFTMz9tDcXjrfB9gH+F8A+P9ls/6rYAUQabHRbIebW0120wesCbIb6ygDG4Tf3Yj5uWR0O+HMoEfvAdkWon59nODJpzvKQlsNbDj4fLbGJ1Mh15ZjLk4lXLiccLu+FRDA6iHlzz5Ga9UOQmsDoJY6n1hv8H05pCcw3nwiwwensjRqwsUJQ0iPHFUAosV5qlevEC/MNV+i9w+ApNGNVmu4TMTDeTjd5zPYLbw95BibhETBCZgapkY4Pkb0V4lw/CdQxew+AAxDMVzKwIrUCIKIYpCkUAbH+oSHElhYBksATxAnrP84jmVy1MaGwTnEeaAxaNI5gCA4UoHN6DqVbIXufMytuM5kOUINnIPjh4VKFcQDU+H2yCzlqzO4Bw/SmLhMY2I4FaLzwXnbJ/nuMmyQMM0KM1ZmkZC/EyWJMmiYpV7O0bh5gHypiwHN4uaMYkUpzIaEP0zStf4tPT2j5LunyGUXyQSr5Pr7CB4fInP8DN6JV5BccfN8aVGGcicLhnMKfoLLxGgQoYGPc4qYUUgquFIEGuFcCSeriFQRqSHSQKwBcR2L66BRKqi76rZtI/qTdb5OZqhHgl/L8VrQT3+QxXnC8pVpbl1f5thbJ7E4ZvXaryy89w45b5qgWOXQu58SnHgRpLXWdxShAf0UGHBdhH6NRwsZHukKEGeoQu6gUhv+Ek1APEfP809ReKwHW1vCOzRA8MzLqfNkQ4T3xtpGhCnEgBTARQz6XXey6BwUjw6QW71EZeQSiMMMXDiP0wqZ/qNgmjr3NkR4b2fcsQ9I8zpCgQfE44jkm0PIYUmM+Fl6XzjF8vmz1H8bYe2rj9D5UXzfyJ9+o5n6Nu3YOrC6xfaN/WKRJZuLmpipWryyZHOv99r0s9gfJ7HZIaz0/lkzVbMkaf3SpnU8DW+wxmGKWxdNQRzx0u+sffEhWrpJ7rmXyL96bjPyNgNpV+M4heh89m9nHX+QtJz9ImkmNiaXGXjbC27bx/d/TPYB9gH2GuAfupDbVCV3uH0AAAAASUVORK5CYII=">
@@ -635,7 +635,6 @@
   .ticket-price-old {
     font-size: 13px;
     color: var(--grey);
-    text-decoration: line-through;
     text-align: center;
     margin-bottom: 4px;
     min-height: 40px;
@@ -1323,6 +1322,21 @@
 @keyframes mn-pop{0%{scale:1}38%{scale:1.14}68%{scale:.985}100%{scale:1}}
 </style>
 
+
+<!-- Preço odômetro V7.3: valor cheio sobe para a linha riscada, traço se desenha, giro curto -->
+<style>
+.mn-price{position:relative}
+.mn-was-val{position:relative;white-space:nowrap}
+.mn-was-val::after{content:"";position:absolute;left:-1px;right:-1px;top:52%;height:1.5px;border-radius:1px;background:currentColor;transform:scaleX(1);transform-origin:0 50%}
+.mn-armed .mn-was-val{opacity:0}
+.mn-armed .mn-was-val::after{transform:scaleX(0)}
+.mn-armed.mn-wasin .mn-was{opacity:1;transform:none;filter:none;transition:opacity .35s ease,transform .35s ease,filter .35s ease}
+.mn-armed.mn-landed .mn-was-val{opacity:1;transition:opacity .16s ease}
+.mn-armed.mn-struck .mn-was-val::after{transform:scaleX(1);transition:transform .3s cubic-bezier(.6,0,.2,1)}
+.mn-reel.mn-sep{text-align:left}
+.mn-fly{position:absolute;margin:0;white-space:nowrap;text-align:left;transform-origin:0 0;pointer-events:none;z-index:3;will-change:transform,opacity}
+@media (prefers-reduced-motion:reduce){.mn-fly{display:none}}
+</style>
 <!-- Preço odômetro: cores da identidade EVO -->
 <style>
 .mn-price{
@@ -1631,7 +1645,7 @@
       <div class="ticket-body">
         <p class="ticket-desc">Este acesso garante sua participação no evento.</p>
         <div class="mn-price" data-de="2.497" data-por="390">
-          <p class="ticket-price-old mn-was">de R$ 2.497 por apenas</p>
+          <p class="ticket-price-old mn-was"><span>de <span class="mn-was-val">R$ 2.497</span> por apenas</span></p>
           <div class="ticket-price mn-now"><span class="mn-cur">R$</span><span class="mn-big">390</span></div>
           <p class="ticket-installments mn-alt">ou 12x de R$ 40,24 no cartão</p>
         </div>
@@ -1658,7 +1672,7 @@
       <div class="ticket-body">
         <p class="ticket-desc">Você + 1 convidado.</p>
         <div class="mn-price" data-de="2.497" data-por="640">
-          <p class="ticket-price-old mn-was">de R$ 2.497 + 1 ingresso bônus por apenas</p>
+          <p class="ticket-price-old mn-was"><span>de <span class="mn-was-val">R$ 2.497</span> + 1 ingresso bônus por apenas</span></p>
           <div class="ticket-price mn-now"><span class="mn-cur">R$</span><span class="mn-big">640</span></div>
           <p class="ticket-installments mn-alt">ou 12x de R$ 66,03 no cartão</p>
         </div>
@@ -1687,7 +1701,7 @@
       <div class="ticket-body">
         <p class="ticket-desc">Você + 2 convidados.</p>
         <div class="mn-price" data-de="2.497" data-por="780">
-          <p class="ticket-price-old mn-was">de R$ 2.497 + 2 ingressos bônus por apenas</p>
+          <p class="ticket-price-old mn-was"><span>de <span class="mn-was-val">R$ 2.497</span> + 2 ingressos bônus por apenas</span></p>
           <div class="ticket-price mn-now"><span class="mn-cur">R$</span><span class="mn-big">780</span></div>
           <p class="ticket-installments mn-alt">ou 12x de R$ 80,48 no cartão</p>
         </div>
@@ -2072,97 +2086,153 @@
   }
 </script>
 
-<!-- ===================== PREÇO ODÔMETRO (JS) ===================== -->
+<!-- ===================== PREÇO ODÔMETRO (JS) — V7.3 ===================== -->
 <script>
-/* Preço odômetro: cada dígito gira com inércia de data-de até data-por, passa um pouco do ponto e assenta
-   como uma mola. Roda toda vez que o bloco entra na tela; ao sair, volta ao valor cheio sem a pessoa ver.
-   Funciona com vários blocos .mn-price na mesma página. Sem JS ou com movimento reduzido: mostra o preço final. */
+/* Sequência por card (ms a partir do momento em que o número entra na tela):
+   0–700    cópia do "R$ 2.497" sobe encolhendo até o valor da linha de cima
+   700–1000 traço risca o valor pequeno
+   800–1700 número grande gira até o valor final (dígitos param em cascata; o ponto do milhar some com o 1º dígito)
+   ~1700    pulo, brilho, halo e parcelamento
+   Saindo da tela, volta ao início sem a pessoa ver. No computador, os cards entram em cascata (0,2 s).
+   Sem JS ou com "reduzir movimento": preço final parado, valor riscado visível. */
 (function () {
   if (!("IntersectionObserver" in window)) return;
   if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  var fmt = function (v) { return String(parseInt(v, 10)).replace(/\B(?=(\d{3})+(?!\d))/g, "."); };
+  var T_FLY = 700, T_STRIKE = 700, T_SPIN = 800;
   var intPart = function (v) { return String(v).split(",")[0].replace(/\D/g, ""); };
-  var centsPart = function (v) { var c = String(v).split(",")[1]; return c ? (c.replace(/\D/g, "") + "00").slice(0, 2) : "00"; };
 
-  [].slice.call(document.querySelectorAll(".mn-price[data-de][data-por]")).forEach(function (root) {
-    var big = root.querySelector(".mn-big"), was = root.querySelector(".mn-was s");
-    var deRaw = root.getAttribute("data-de"), de = intPart(deRaw), por = intPart(root.getAttribute("data-por"));
-    if (!big || !de || !por) return;
+  [].slice.call(document.querySelectorAll(".mn-price[data-de][data-por]")).forEach(function (root, cardIdx) {
+    var big = root.querySelector(".mn-big"), now = root.querySelector(".mn-now"), wasVal = root.querySelector(".mn-was-val");
+    var de = intPart(root.getAttribute("data-de")), por = intPart(root.getAttribute("data-por"));
+    if (!big || !now || !de || !por) return;
     var n = Math.max(de.length, por.length);
     while (de.length < n) de = "0" + de;
     while (por.length < n) por = "0" + por;
-    if (was) was.textContent = "R$ " + fmt(de) + "," + centsPart(deRaw);
     var label = String(parseInt(por, 10));
-    var html = "", dur = [], cyc = [];
+
+    // rolos + separador de milhar (o separador some junto com os dígitos que viram zero à esquerda)
+    var html = "", reels = [];
     for (var i = 0; i < n; i++) {
-      var cycles = 2 + i, items = "";
+      if (i > 0 && (n - i) % 3 === 0) {
+        var sepLead = /^0*$/.test(por.slice(0, i));
+        html += '<span class="mn-reel mn-sep' + (sepLead ? " mn-lead" : "") + '" style="--mn-from:0;--mn-to:0"><span class="mn-strip"><i>.</i></span></span>';
+        reels.push({ sep: true });
+      }
+      var cycles = i < n - 1 ? 1 : 2, items = "";
       for (var k = 0; k < (cycles + 1) * 10; k++) items += "<i>" + (k % 10) + "</i>";
       var lead = por.charAt(i) === "0" && /^0*$/.test(por.slice(0, i + 1));
-      cyc.push(cycles); dur.push(1000 + i * 420);
       html += '<span class="mn-reel' + (lead ? " mn-lead" : "") + '" style="--mn-from:' + de.charAt(i) +
-        ";--mn-to:" + (parseInt(por.charAt(i), 10) + 10 * cycles) + ";--mn-sd:" + (i * 0.09).toFixed(2) +
+        ";--mn-to:" + (parseInt(por.charAt(i), 10) + 10 * cycles) + ";--mn-sd:" + (i * 0.06).toFixed(2) +
         's"><span class="mn-strip">' + items + "</span></span>";
+      reels.push({ sep: false, i: i, cycles: cycles, dur: 600 + i * 100 });
     }
     big.innerHTML = '<span class="mn-sr">' + label + '</span><span class="mn-reels" aria-hidden="true">' + html + "</span>";
     big.classList.add("mn-built");
     var reelEls = [].slice.call(big.querySelectorAll(".mn-reel"));
-    // largura de cada rolo = largura real do dígito final, para o preço parado ficar idêntico ao texto original
+    reelEls.forEach(function (el, x) { reels[x].el = el; });
+    var digits = reels.filter(function (r) { return !r.sep; });
+    var lastDur = digits[digits.length - 1].dur;
+
+    // largura de cada rolo = largura real do caractere final (o preço parado fica idêntico ao texto original)
     function measure() {
       var fs = parseFloat(getComputedStyle(big).fontSize) || 16;
-      reelEls.forEach(function (r, i) {
+      reels.forEach(function (r) {
         var t = document.createElement("span");
         t.style.cssText = "position:absolute;visibility:hidden;white-space:nowrap";
-        t.textContent = por.charAt(i); big.appendChild(t);
-        r.style.setProperty("--mn-w", (t.getBoundingClientRect().width / fs).toFixed(3) + "em");
+        t.textContent = r.sep ? "." : por.charAt(r.i); big.appendChild(t);
+        r.el.style.setProperty("--mn-w", (t.getBoundingClientRect().width / fs).toFixed(3) + "em");
         big.removeChild(t);
       });
     }
     measure();
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
     root.classList.add("mn-armed");
-    var timers = [], anims = [], playing = false;
+
+    var timers = [], anims = [], playing = false, fly = null;
     function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
     function reset() {
       timers.forEach(clearTimeout); timers = [];
       anims.forEach(function (a) { try { a.cancel(); } catch (e) {} }); anims = [];
+      if (fly && fly.parentNode) fly.parentNode.removeChild(fly); fly = null;
       root.classList.add("mn-notrans");
-      root.classList.remove("mn-end", "mn-done", "mn-pop", "mn-shine");
+      root.classList.remove("mn-end", "mn-done", "mn-pop", "mn-shine", "mn-wasin", "mn-landed", "mn-struck");
       reelEls.forEach(function (r) { r.classList.remove("mn-gone", "mn-blur"); });
       void root.offsetWidth;
       root.classList.remove("mn-notrans");
       playing = false;
     }
+
+    // cópia do "R$ 2.497" grande que voa até o valor pequeno
+    function launchFly() {
+      if (!wasVal || !now.animate) return;
+      var rb = root.getBoundingClientRect();
+      var cur = now.querySelector(".mn-cur"), reelsBox = big.querySelector(".mn-reels");
+      var a = cur.getBoundingClientRect(), b = reelsBox.getBoundingClientRect();
+      var sL = Math.min(a.left, b.left), sT = Math.min(a.top, b.top);
+      var sW = Math.max(a.right, b.right) - sL, sH = Math.max(a.bottom, b.bottom) - sT;
+      fly = document.createElement("div");
+      fly.className = "ticket-price mn-fly";
+      fly.setAttribute("aria-hidden", "true");
+      fly.appendChild(cur.cloneNode(true));
+      var bigClone = big.cloneNode(true); bigClone.querySelector(".mn-sr").remove();
+      fly.appendChild(bigClone);
+      fly.style.left = (sL - rb.left) + "px"; fly.style.top = (sT - rb.top) + "px";
+      root.appendChild(fly);
+      var f = fly.getBoundingClientRect();                 // corrige diferença entre caixa e conteúdo
+      fly.style.left = (sL - rb.left - (f.left - sL)) + "px"; fly.style.top = (sT - rb.top - (f.top - sT)) + "px";
+      root.classList.add("mn-wasin");                       // linha de cima aparece (sem o valor)
+      var t = wasVal.getBoundingClientRect();
+      var s = Math.min(t.width / sW, t.height / sH * 1.15);
+      var dx = t.left - sL, dy = (t.top + t.height / 2) - (sT + sH * s / 2);
+      anims.push(fly.animate([
+        { transform: "translate(0,0) scale(1)", opacity: 1, easing: "cubic-bezier(.3,0,.2,1)" },
+        { transform: "translate(0,-6px) scale(1.03)", opacity: 1, offset: 0.14, easing: "cubic-bezier(.5,0,.2,1)" },
+        { transform: "translate(" + dx + "px," + dy + "px) scale(" + s + ")", opacity: 1, offset: 0.82 },
+        { transform: "translate(" + dx + "px," + dy + "px) scale(" + s + ")", opacity: 0 }
+      ], { duration: T_FLY, fill: "forwards" }));
+      later(function () { root.classList.add("mn-landed"); }, T_FLY * 0.8);
+      later(function () { if (fly && fly.parentNode) fly.parentNode.removeChild(fly); fly = null; }, T_FLY + 40);
+    }
+
+    function spin() {
+      digits.forEach(function (r) {
+        var strip = r.el.firstChild, from = parseInt(de.charAt(r.i), 10), to = parseInt(por.charAt(r.i), 10) + 10 * r.cycles;
+        var h = function (v) { return "translateY(" + (-v) + "em)"; };
+        r.el.classList.add("mn-blur");
+        if (strip.animate) {
+          anims.push(strip.animate([
+            { transform: h(from), easing: "cubic-bezier(.4,.02,.18,1)" },
+            { transform: h(to + 0.3), offset: 0.8, easing: "cubic-bezier(.35,0,.25,1)" },
+            { transform: h(to) }
+          ], { duration: r.dur, fill: "forwards" }));
+        } else { r.el.classList.remove("mn-blur"); root.classList.add("mn-end"); }
+        later(function () { r.el.classList.remove("mn-blur"); }, r.dur * 0.62);
+      });
+      // dígitos (e separador) que viram zero à esquerda se dissolvem
+      later(function () {
+        reelEls.forEach(function (el) { if (el.classList.contains("mn-lead")) el.classList.add("mn-gone"); });
+      }, digits[0].dur * 0.55);
+      later(function () { root.classList.add("mn-pop", "mn-shine"); }, lastDur * 0.92);
+      later(function () { root.classList.add("mn-done"); }, lastDur * 0.92 + 200);
+    }
+
     function play() {
       reset(); playing = true;
+      var d = window.innerWidth > 900 ? cardIdx * 200 : 0;   // cascata no computador
       later(function () {
-        var last = dur[n - 1];
-        reelEls.forEach(function (r, i) {
-          var strip = r.firstChild, from = parseInt(de.charAt(i), 10), to = parseInt(por.charAt(i), 10) + 10 * cyc[i];
-          var h = function (v) { return "translateY(" + (-v) + "em)"; };
-          r.classList.add("mn-blur");
-          if (strip.animate) {
-            anims.push(strip.animate([
-              { transform: h(from), easing: "cubic-bezier(.4,.02,.18,1)" },
-              { transform: h(to + 0.34), offset: 0.78, easing: "cubic-bezier(.35,0,.25,1)" },
-              { transform: h(to) }
-            ], { duration: dur[i], fill: "forwards" }));
-          } else { r.classList.remove("mn-blur"); root.classList.add("mn-end"); }
-          later(function () { r.classList.remove("mn-blur"); }, dur[i] * 0.66);
-        });
-        later(function () {
-          reelEls.forEach(function (r) { if (r.classList.contains("mn-lead")) r.classList.add("mn-gone"); });
-        }, dur[Math.max(n - 2, 0)] * 0.74);
-        later(function () { root.classList.add("mn-pop", "mn-shine"); }, last * 0.9);
-        later(function () { root.classList.add("mn-done"); }, last * 0.9 + 260);
-      }, 650);
+        launchFly();
+        later(function () { root.classList.add("mn-struck"); }, T_STRIKE);
+        later(spin, T_SPIN);
+      }, 150 + d);
     }
+
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
-        if (e.isIntersecting && e.intersectionRatio >= 0.6) { if (!playing) play(); }
+        if (e.isIntersecting && e.intersectionRatio >= 0.5) { if (!playing) play(); }
         else if (!e.isIntersecting) { reset(); }
       });
-    }, { threshold: [0, 0.6] });
-    io.observe(root);
+    }, { threshold: [0, 0.5] });
+    io.observe(now);
   });
 })();
 </script>
